@@ -256,7 +256,7 @@
 			this.ClientSize = new System.Drawing.Size(1768, 1112);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "frmMain";
-			this.Load += new System.EventHandler(this.Form1_Load);
+			this.Load += new System.EventHandler(this.frmMain_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.tableLayoutPanel2.PerformLayout();

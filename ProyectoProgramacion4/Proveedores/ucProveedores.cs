@@ -1,4 +1,5 @@
-﻿using ProyectoProgramacion4.Productos;
+﻿using ModeloBD;
+using ProyectoProgramacion4.Productos;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -24,15 +25,17 @@ namespace ProyectoProgramacion4.Proveedores
 
 		private void cargarProveedores()
 		{
-			listaProveedores = new List<string>
+			try
 			{
-				"Proveedor 1",
-				"Proveedor 2",
-				"Proveedor 3",
-				"Proveedor 4",
-				"Proveedor 5"
-			};
-			dgvProveedores.DataSource = listaProveedores.Select(x => new { Nombre = x }).ToList(); ;
+				using (ProyectoProgra4Entities contexto = new ProyectoProgra4Entities())
+				{
+					dgvProveedores.DataSource = contexto.Proveedores.ToList();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
 		}
 
 		private void btnVerProductos_Click(object sender, EventArgs e)

@@ -18,7 +18,7 @@ namespace ProyectoProgramacion4
 			InitializeComponent();
 		}
 
-		private void Form1_Load(object sender, EventArgs e)
+		private void frmMain_Load(object sender, EventArgs e)
 		{
 			treeView.ExpandAll();
 			cambiarPantalla(new ucProveedores());
