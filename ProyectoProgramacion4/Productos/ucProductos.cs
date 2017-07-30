@@ -7,35 +7,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ModeloBD;
 
 namespace ProyectoProgramacion4.Productos
 {
 	public partial class ucProductos : UserControl
 	{
-		List<string> listaProductos;
+		public string NombreProveedor { get; set; }
 
 		public ucProductos()
 		{
 			InitializeComponent();
+			dgvProductos.AutoGenerateColumns = false;
 		}
 
 		private void ucProductos_Load(object sender, EventArgs e)
 		{
 			this.Dock = DockStyle.Fill;
+			lblNombreProveedor.Text = NombreProveedor;
 			cargarProductos();
 		}
 
 		private void cargarProductos()
 		{
-			listaProductos = new List<string>
+			try
 			{
-				"Producto 1",
-				"Producto 2",
-				"Producto 3",
-				"Producto 4",
-				"Producto 5"
-			};
-			dgvProductos.DataSource = listaProductos.Select(x => new { Nombre = x }).ToList(); ;
+				using (ProyectoProgra4Entities contexto = new ProyectoProgra4Entities())
+				{
+					contexto.Configuration.LazyLoadingEnabled = false;
+					dgvProductos.DataSource = contexto.Productos.ToList();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
 		}
 	}
 }
