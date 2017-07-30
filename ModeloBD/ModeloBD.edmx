@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProyectoProgra4Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Compras">
+          <Key>
+            <PropertyRef Name="Id_Compra" />
+          </Key>
+          <Property Name="Id_Compra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Valor" Type="money" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="Id_Departamento" />
+          </Key>
+          <Property Name="Id_Departamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_Departamento" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Id_Jefe" Type="int" Nullable="false" />
+          <Property Name="Presupuesto" Type="money" Nullable="false" />
+          <Property Name="Monto_Proceso" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Movimientos">
+          <Key>
+            <PropertyRef Name="Id_Movimiento" />
+          </Key>
+          <Property Name="Id_Movimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Departamento" Type="int" />
+          <Property Name="Id_Compra" Type="int" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Tesorero_Proceso" Type="int" />
+        </EntityType>
+        <EntityType Name="OrdenesCompra">
+          <Key>
+            <PropertyRef Name="Id_Orden" />
+          </Key>
+          <Property Name="Id_Orden" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Solicitud" Type="int" />
+          <Property Name="Id_Proveedor" Type="int" />
+          <Property Name="Fecha_OrdenCompra" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="Id_Producto" />
+          </Key>
+          <Property Name="Id_Producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Proveedor" Type="int" />
+          <Property Name="Tipo" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Nom_Producto" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Precio" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductosCompra">
+          <Key>
+            <PropertyRef Name="Id_Compra" />
+            <PropertyRef Name="Id_Producto" />
+          </Key>
+          <Property Name="Id_Compra" Type="int" Nullable="false" />
+          <Property Name="Id_Producto" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="Id_Proveedor" />
+          </Key>
+          <Property Name="Id_Proveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nom_Proveedor" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="Solicitudes">
+          <Key>
+            <PropertyRef Name="Id_Solicitud" />
+          </Key>
+          <Property Name="Id_Solicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Usuario" Type="int" />
+          <Property Name="Id_Compra" Type="int" />
+          <Property Name="Fecha_Solicitud" Type="date" Nullable="false" />
+          <Property Name="Jefe_Aprovado" Type="varchar" MaxLength="45" />
+          <Property Name="Fecha_Jefe_Apro" Type="date" />
+          <Property Name="Gerencia_Aprovado" Type="varchar" MaxLength="45" />
+          <Property Name="Fecha_Gerencia_Apro" Type="date" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Usuario" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Apellido1" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Apellido2" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Nom_Login" Type="varchar" MaxLength="20" />
+          <Property Name="Contraseña" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="Id_Departamento" Type="int" />
+        </EntityType>
+        <Association Name="FK__Movimient__Id_Co__3C69FB99">
+          <End Role="Compras" Type="Self.Compras" Multiplicity="0..1" />
+          <End Role="Movimientos" Type="Self.Movimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="Id_Compra" />
+            </Principal>
+            <Dependent Role="Movimientos">
+              <PropertyRef Name="Id_Compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Movimient__Id_De__3B75D760">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+          <End Role="Movimientos" Type="Self.Movimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="Id_Departamento" />
+            </Principal>
+            <Dependent Role="Movimientos">
+              <PropertyRef Name="Id_Departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdenesCo__Id_Pr__38996AB5">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="OrdenesCompra" Type="Self.OrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="Id_Proveedor" />
+            </Principal>
+            <Dependent Role="OrdenesCompra">
+              <PropertyRef Name="Id_Proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdenesCo__Id_So__37A5467C">
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="0..1" />
+          <End Role="OrdenesCompra" Type="Self.OrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitudes">
+              <PropertyRef Name="Id_Solicitud" />
+            </Principal>
+            <Dependent Role="OrdenesCompra">
+              <PropertyRef Name="Id_Solicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__Id_Co__300424B4">
+          <End Role="Compras" Type="Self.Compras" Multiplicity="1" />
+          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="Id_Compra" />
+            </Principal>
+            <Dependent Role="ProductosCompra">
+              <PropertyRef Name="Id_Compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__Id_Pr__2B3F6F97">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="Id_Proveedor" />
+            </Principal>
+            <Dependent Role="Productos">
+              <PropertyRef Name="Id_Proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__Id_Pr__30F848ED">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="Id_Producto" />
+            </Principal>
+            <Dependent Role="ProductosCompra">
+              <PropertyRef Name="Id_Producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__Id_Co__34C8D9D1">
+          <End Role="Compras" Type="Self.Compras" Multiplicity="0..1" />
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="Id_Compra" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="Id_Compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__Id_Us__33D4B598">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_Usuario" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__Id_Depa__267ABA7A">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="Id_Departamento" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Id_Departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProyectoProgra4ModelStoreContainer">
+          <EntitySet Name="Compras" EntityType="Self.Compras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamento" EntityType="Self.Departamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movimientos" EntityType="Self.Movimientos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdenesCompra" EntityType="Self.OrdenesCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductosCompra" EntityType="Self.ProductosCompra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Solicitudes" EntityType="Self.Solicitudes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Movimient__Id_Co__3C69FB99" Association="Self.FK__Movimient__Id_Co__3C69FB99">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="Movimientos" EntitySet="Movimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Movimient__Id_De__3B75D760" Association="Self.FK__Movimient__Id_De__3B75D760">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Movimientos" EntitySet="Movimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdenesCo__Id_Pr__38996AB5" Association="Self.FK__OrdenesCo__Id_Pr__38996AB5">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdenesCo__Id_So__37A5467C" Association="Self.FK__OrdenesCo__Id_So__37A5467C">
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__Id_Co__300424B4" Association="Self.FK__Productos__Id_Co__300424B4">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__Id_Pr__2B3F6F97" Association="Self.FK__Productos__Id_Pr__2B3F6F97">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__Id_Pr__30F848ED" Association="Self.FK__Productos__Id_Pr__30F848ED">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__Id_Co__34C8D9D1" Association="Self.FK__Solicitud__Id_Co__34C8D9D1">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__Id_Us__33D4B598" Association="Self.FK__Solicitud__Id_Us__33D4B598">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__Id_Depa__267ABA7A" Association="Self.FK__Usuario__Id_Depa__267ABA7A">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProyectoProgra4Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Compras">
+          <Key>
+            <PropertyRef Name="Id_Compra" />
+          </Key>
+          <Property Name="Id_Compra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Precision="19" Scale="4" />
+          <NavigationProperty Name="Movimientos" Relationship="Self.FK__Movimient__Id_Co__3C69FB99" FromRole="Compras" ToRole="Movimientos" />
+          <NavigationProperty Name="ProductosCompra" Relationship="Self.FK__Productos__Id_Co__300424B4" FromRole="Compras" ToRole="ProductosCompra" />
+          <NavigationProperty Name="Solicitudes" Relationship="Self.FK__Solicitud__Id_Co__34C8D9D1" FromRole="Compras" ToRole="Solicitudes" />
+        </EntityType>
+        <EntityType Name="Departamento">
+          <Key>
+            <PropertyRef Name="Id_Departamento" />
+          </Key>
+          <Property Name="Id_Departamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_Departamento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_Jefe" Type="Int32" Nullable="false" />
+          <Property Name="Presupuesto" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Monto_Proceso" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Movimientos" Relationship="Self.FK__Movimient__Id_De__3B75D760" FromRole="Departamento" ToRole="Movimientos" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__Id_Depa__267ABA7A" FromRole="Departamento" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Movimientos">
+          <Key>
+            <PropertyRef Name="Id_Movimiento" />
+          </Key>
+          <Property Name="Id_Movimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Departamento" Type="Int32" />
+          <Property Name="Id_Compra" Type="Int32" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Tesorero_Proceso" Type="Int32" />
+          <NavigationProperty Name="Compras" Relationship="Self.FK__Movimient__Id_Co__3C69FB99" FromRole="Movimientos" ToRole="Compras" />
+          <NavigationProperty Name="Departamento" Relationship="Self.FK__Movimient__Id_De__3B75D760" FromRole="Movimientos" ToRole="Departamento" />
+        </EntityType>
+        <EntityType Name="OrdenesCompra">
+          <Key>
+            <PropertyRef Name="Id_Orden" />
+          </Key>
+          <Property Name="Id_Orden" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Solicitud" Type="Int32" />
+          <Property Name="Id_Proveedor" Type="Int32" />
+          <Property Name="Fecha_OrdenCompra" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK__OrdenesCo__Id_Pr__38996AB5" FromRole="OrdenesCompra" ToRole="Proveedores" />
+          <NavigationProperty Name="Solicitudes" Relationship="Self.FK__OrdenesCo__Id_So__37A5467C" FromRole="OrdenesCompra" ToRole="Solicitudes" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="Id_Producto" />
+          </Key>
+          <Property Name="Id_Producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Proveedor" Type="Int32" />
+          <Property Name="Tipo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nom_Producto" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Productos__Id_Pr__2B3F6F97" FromRole="Productos" ToRole="Proveedores" />
+          <NavigationProperty Name="ProductosCompra" Relationship="Self.FK__Productos__Id_Pr__30F848ED" FromRole="Productos" ToRole="ProductosCompra" />
+        </EntityType>
+        <EntityType Name="ProductosCompra">
+          <Key>
+            <PropertyRef Name="Id_Compra" />
+            <PropertyRef Name="Id_Producto" />
+          </Key>
+          <Property Name="Id_Compra" Type="Int32" Nullable="false" />
+          <Property Name="Id_Producto" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" />
+          <NavigationProperty Name="Compras" Relationship="Self.FK__Productos__Id_Co__300424B4" FromRole="ProductosCompra" ToRole="Compras" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__Id_Pr__30F848ED" FromRole="ProductosCompra" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="Id_Proveedor" />
+          </Key>
+          <Property Name="Id_Proveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom_Proveedor" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrdenesCompra" Relationship="Self.FK__OrdenesCo__Id_Pr__38996AB5" FromRole="Proveedores" ToRole="OrdenesCompra" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__Id_Pr__2B3F6F97" FromRole="Proveedores" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Solicitudes">
+          <Key>
+            <PropertyRef Name="Id_Solicitud" />
+          </Key>
+          <Property Name="Id_Solicitud" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Usuario" Type="Int32" />
+          <Property Name="Id_Compra" Type="Int32" />
+          <Property Name="Fecha_Solicitud" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Jefe_Aprovado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Jefe_Apro" Type="DateTime" Precision="0" />
+          <Property Name="Gerencia_Aprovado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Gerencia_Apro" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Compras" Relationship="Self.FK__Solicitud__Id_Co__34C8D9D1" FromRole="Solicitudes" ToRole="Compras" />
+          <NavigationProperty Name="OrdenesCompra" Relationship="Self.FK__OrdenesCo__Id_So__37A5467C" FromRole="Solicitudes" ToRole="OrdenesCompra" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Solicitud__Id_Us__33D4B598" FromRole="Solicitudes" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id_Usuario" />
+          </Key>
+          <Property Name="Id_Usuario" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido2" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nom_Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Contraseña" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Id_Departamento" Type="Int32" />
+          <NavigationProperty Name="Departamento" Relationship="Self.FK__Usuario__Id_Depa__267ABA7A" FromRole="Usuario" ToRole="Departamento" />
+          <NavigationProperty Name="Solicitudes" Relationship="Self.FK__Solicitud__Id_Us__33D4B598" FromRole="Usuario" ToRole="Solicitudes" />
+        </EntityType>
+        <Association Name="FK__Movimient__Id_Co__3C69FB99">
+          <End Role="Compras" Type="Self.Compras" Multiplicity="0..1" />
+          <End Role="Movimientos" Type="Self.Movimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="Id_Compra" />
+            </Principal>
+            <Dependent Role="Movimientos">
+              <PropertyRef Name="Id_Compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__Id_Co__300424B4">
+          <End Role="Compras" Type="Self.Compras" Multiplicity="1" />
+          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="Id_Compra" />
+            </Principal>
+            <Dependent Role="ProductosCompra">
+              <PropertyRef Name="Id_Compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__Id_Co__34C8D9D1">
+          <End Role="Compras" Type="Self.Compras" Multiplicity="0..1" />
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compras">
+              <PropertyRef Name="Id_Compra" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="Id_Compra" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Movimient__Id_De__3B75D760">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+          <End Role="Movimientos" Type="Self.Movimientos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="Id_Departamento" />
+            </Principal>
+            <Dependent Role="Movimientos">
+              <PropertyRef Name="Id_Departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__Id_Depa__267ABA7A">
+          <End Role="Departamento" Type="Self.Departamento" Multiplicity="0..1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departamento">
+              <PropertyRef Name="Id_Departamento" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="Id_Departamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdenesCo__Id_Pr__38996AB5">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="OrdenesCompra" Type="Self.OrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="Id_Proveedor" />
+            </Principal>
+            <Dependent Role="OrdenesCompra">
+              <PropertyRef Name="Id_Proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdenesCo__Id_So__37A5467C">
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="0..1" />
+          <End Role="OrdenesCompra" Type="Self.OrdenesCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitudes">
+              <PropertyRef Name="Id_Solicitud" />
+            </Principal>
+            <Dependent Role="OrdenesCompra">
+              <PropertyRef Name="Id_Solicitud" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__Id_Pr__2B3F6F97">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="Id_Proveedor" />
+            </Principal>
+            <Dependent Role="Productos">
+              <PropertyRef Name="Id_Proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__Id_Pr__30F848ED">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+          <End Role="ProductosCompra" Type="Self.ProductosCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="Id_Producto" />
+            </Principal>
+            <Dependent Role="ProductosCompra">
+              <PropertyRef Name="Id_Producto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__Id_Us__33D4B598">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+          <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id_Usuario" />
+            </Principal>
+            <Dependent Role="Solicitudes">
+              <PropertyRef Name="Id_Usuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ProyectoProgra4Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Compras" EntityType="Self.Compras" />
+          <EntitySet Name="Departamento" EntityType="Self.Departamento" />
+          <EntitySet Name="Movimientos" EntityType="Self.Movimientos" />
+          <EntitySet Name="OrdenesCompra" EntityType="Self.OrdenesCompra" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" />
+          <EntitySet Name="ProductosCompra" EntityType="Self.ProductosCompra" />
+          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
+          <EntitySet Name="Solicitudes" EntityType="Self.Solicitudes" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK__Movimient__Id_Co__3C69FB99" Association="Self.FK__Movimient__Id_Co__3C69FB99">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="Movimientos" EntitySet="Movimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__Id_Co__300424B4" Association="Self.FK__Productos__Id_Co__300424B4">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__Id_Co__34C8D9D1" Association="Self.FK__Solicitud__Id_Co__34C8D9D1">
+            <End Role="Compras" EntitySet="Compras" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Movimient__Id_De__3B75D760" Association="Self.FK__Movimient__Id_De__3B75D760">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Movimientos" EntitySet="Movimientos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__Id_Depa__267ABA7A" Association="Self.FK__Usuario__Id_Depa__267ABA7A">
+            <End Role="Departamento" EntitySet="Departamento" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdenesCo__Id_Pr__38996AB5" Association="Self.FK__OrdenesCo__Id_Pr__38996AB5">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdenesCo__Id_So__37A5467C" Association="Self.FK__OrdenesCo__Id_So__37A5467C">
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+            <End Role="OrdenesCompra" EntitySet="OrdenesCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__Id_Pr__2B3F6F97" Association="Self.FK__Productos__Id_Pr__2B3F6F97">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__Id_Pr__30F848ED" Association="Self.FK__Productos__Id_Pr__30F848ED">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="ProductosCompra" EntitySet="ProductosCompra" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__Id_Us__33D4B598" Association="Self.FK__Solicitud__Id_Us__33D4B598">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Solicitudes" EntitySet="Solicitudes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProyectoProgra4ModelStoreContainer" CdmEntityContainer="ProyectoProgra4Entities">
+          <EntitySetMapping Name="Compras">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.Compras">
+              <MappingFragment StoreEntitySet="Compras">
+                <ScalarProperty Name="Id_Compra" ColumnName="Id_Compra" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamento">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.Departamento">
+              <MappingFragment StoreEntitySet="Departamento">
+                <ScalarProperty Name="Id_Departamento" ColumnName="Id_Departamento" />
+                <ScalarProperty Name="Nom_Departamento" ColumnName="Nom_Departamento" />
+                <ScalarProperty Name="Id_Jefe" ColumnName="Id_Jefe" />
+                <ScalarProperty Name="Presupuesto" ColumnName="Presupuesto" />
+                <ScalarProperty Name="Monto_Proceso" ColumnName="Monto_Proceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movimientos">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.Movimientos">
+              <MappingFragment StoreEntitySet="Movimientos">
+                <ScalarProperty Name="Id_Movimiento" ColumnName="Id_Movimiento" />
+                <ScalarProperty Name="Id_Departamento" ColumnName="Id_Departamento" />
+                <ScalarProperty Name="Id_Compra" ColumnName="Id_Compra" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Tesorero_Proceso" ColumnName="Tesorero_Proceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdenesCompra">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.OrdenesCompra">
+              <MappingFragment StoreEntitySet="OrdenesCompra">
+                <ScalarProperty Name="Id_Orden" ColumnName="Id_Orden" />
+                <ScalarProperty Name="Id_Solicitud" ColumnName="Id_Solicitud" />
+                <ScalarProperty Name="Id_Proveedor" ColumnName="Id_Proveedor" />
+                <ScalarProperty Name="Fecha_OrdenCompra" ColumnName="Fecha_OrdenCompra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productos">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.Productos">
+              <MappingFragment StoreEntitySet="Productos">
+                <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
+                <ScalarProperty Name="Id_Proveedor" ColumnName="Id_Proveedor" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Nom_Producto" ColumnName="Nom_Producto" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductosCompra">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.ProductosCompra">
+              <MappingFragment StoreEntitySet="ProductosCompra">
+                <ScalarProperty Name="Id_Compra" ColumnName="Id_Compra" />
+                <ScalarProperty Name="Id_Producto" ColumnName="Id_Producto" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedores">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.Proveedores">
+              <MappingFragment StoreEntitySet="Proveedores">
+                <ScalarProperty Name="Id_Proveedor" ColumnName="Id_Proveedor" />
+                <ScalarProperty Name="Nom_Proveedor" ColumnName="Nom_Proveedor" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitudes">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.Solicitudes">
+              <MappingFragment StoreEntitySet="Solicitudes">
+                <ScalarProperty Name="Id_Solicitud" ColumnName="Id_Solicitud" />
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+                <ScalarProperty Name="Id_Compra" ColumnName="Id_Compra" />
+                <ScalarProperty Name="Fecha_Solicitud" ColumnName="Fecha_Solicitud" />
+                <ScalarProperty Name="Jefe_Aprovado" ColumnName="Jefe_Aprovado" />
+                <ScalarProperty Name="Fecha_Jefe_Apro" ColumnName="Fecha_Jefe_Apro" />
+                <ScalarProperty Name="Gerencia_Aprovado" ColumnName="Gerencia_Aprovado" />
+                <ScalarProperty Name="Fecha_Gerencia_Apro" ColumnName="Fecha_Gerencia_Apro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="ProyectoProgra4Model.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id_Usuario" ColumnName="Id_Usuario" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Nom_Login" ColumnName="Nom_Login" />
+                <ScalarProperty Name="Contraseña" ColumnName="Contraseña" />
+                <ScalarProperty Name="Id_Departamento" ColumnName="Id_Departamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
