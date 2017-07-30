@@ -119,6 +119,12 @@
   <ItemGroup>
     <None Include="Resources\Fondo Login 4.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModeloBD\ModeloBD.csproj">
+      <Project>{d73fddb2-9b3c-49c2-970a-9ee7eaf5cdbd}</Project>
+      <Name>ModeloBD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
