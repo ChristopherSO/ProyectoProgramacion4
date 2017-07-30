@@ -10,11 +10,11 @@ namespace ProyectoProgramacion4.Proveedores
 {
 	public partial class ucProveedores : UserControl
 	{
-		List<string> listaProveedores;
 
 		public ucProveedores()
 		{
 			InitializeComponent();
+			dgvProveedores.AutoGenerateColumns = false;
 		}
 
 		private void ucProveedores_Load(object sender, EventArgs e)
@@ -29,6 +29,7 @@ namespace ProyectoProgramacion4.Proveedores
 			{
 				using (ProyectoProgra4Entities contexto = new ProyectoProgra4Entities())
 				{
+					contexto.Configuration.LazyLoadingEnabled = false;
 					dgvProveedores.DataSource = contexto.Proveedores.ToList();
 				}
 			}
@@ -41,7 +42,12 @@ namespace ProyectoProgramacion4.Proveedores
 		private void btnVerProductos_Click(object sender, EventArgs e)
 		{
 			frmMain FormularioPadre = (frmMain)this.FindForm();
-			FormularioPadre.cambiarPantalla(new ucProductos());
+			ucProductos pantalla = new ucProductos();
+
+			//var Producto = (ModeloBD.Productos)dgvProveedores.SelectedRows.Cast<ModeloBD.Productos>().First();
+			//var Producto = (ModeloBD.Productos)selectedRow.DataBoundItem;
+			pantalla.NombreProveedor = dgvProveedores.SelectedRows[0].Cells["Nombre"].Value.ToString();
+			FormularioPadre.cambiarPantalla(pantalla);
 		}
 	}
 }

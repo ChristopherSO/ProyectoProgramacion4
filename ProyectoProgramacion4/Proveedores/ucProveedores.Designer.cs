@@ -31,8 +31,9 @@
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dgvProveedores = new System.Windows.Forms.DataGridView();
-			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btnVerProductos = new System.Windows.Forms.Button();
+			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
 			this.SuspendLayout();
@@ -84,7 +85,8 @@
 			this.dgvProveedores.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
 			this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre});
+            this.Nombre,
+            this.Descripcion});
 			this.dgvProveedores.Location = new System.Drawing.Point(3, 93);
 			this.dgvProveedores.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
 			this.dgvProveedores.MultiSelect = false;
@@ -94,14 +96,6 @@
 			this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvProveedores.Size = new System.Drawing.Size(1430, 751);
 			this.dgvProveedores.TabIndex = 3;
-			// 
-			// Nombre
-			// 
-			this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Nombre.DataPropertyName = "Nombre";
-			this.Nombre.HeaderText = "Nombre proveedor";
-			this.Nombre.Name = "Nombre";
-			this.Nombre.ReadOnly = true;
 			// 
 			// btnVerProductos
 			// 
@@ -116,6 +110,21 @@
 			this.btnVerProductos.Text = "Ver productos";
 			this.btnVerProductos.UseVisualStyleBackColor = false;
 			this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click);
+			// 
+			// Nombre
+			// 
+			this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Nombre.DataPropertyName = "Nom_Proveedor";
+			this.Nombre.HeaderText = "Nombre proveedor";
+			this.Nombre.Name = "Nombre";
+			this.Nombre.ReadOnly = true;
+			// 
+			// Descripcion
+			// 
+			this.Descripcion.DataPropertyName = "Descripcion";
+			this.Descripcion.HeaderText = "Descripción";
+			this.Descripcion.Name = "Descripcion";
+			this.Descripcion.ReadOnly = true;
 			// 
 			// ucProveedores
 			// 
@@ -139,7 +148,8 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DataGridView dgvProveedores;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
 		private System.Windows.Forms.Button btnVerProductos;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
 	}
 }
