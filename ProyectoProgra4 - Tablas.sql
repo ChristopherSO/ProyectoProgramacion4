@@ -97,3 +97,4 @@ CREATE TABLE Movimientos (
 	Fecha DATE NOT NULL,
 	Tesorero_Proceso INT
 );
+
