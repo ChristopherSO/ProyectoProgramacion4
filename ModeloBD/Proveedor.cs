@@ -12,13 +12,13 @@ namespace ModeloBD
     using System;
     using System.Collections.Generic;
     
-    public partial class Proveedores
+    public partial class Proveedor
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Proveedores()
+        public Proveedor()
         {
-            this.OrdenesCompra = new HashSet<OrdenesCompra>();
-            this.Productos = new HashSet<Productos>();
+            this.OrdenCompra = new HashSet<OrdenCompra>();
+            this.Producto = new HashSet<Producto>();
         }
     
         public int Id_Proveedor { get; set; }
@@ -26,8 +26,8 @@ namespace ModeloBD
         public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrdenesCompra> OrdenesCompra { get; set; }
+        public virtual ICollection<OrdenCompra> OrdenCompra { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Productos> Productos { get; set; }
+        public virtual ICollection<Producto> Producto { get; set; }
     }
 }

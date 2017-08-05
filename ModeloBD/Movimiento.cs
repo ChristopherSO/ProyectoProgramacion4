@@ -12,14 +12,15 @@ namespace ModeloBD
     using System;
     using System.Collections.Generic;
     
-    public partial class OrdenesCompra
+    public partial class Movimiento
     {
-        public int Id_Orden { get; set; }
-        public Nullable<int> Id_Solicitud { get; set; }
-        public Nullable<int> Id_Proveedor { get; set; }
-        public System.DateTime Fecha_OrdenCompra { get; set; }
+        public int Id_Movimiento { get; set; }
+        public Nullable<int> Id_Departamento { get; set; }
+        public Nullable<int> Id_Compra { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public Nullable<int> Tesorero_Proceso { get; set; }
     
-        public virtual Proveedores Proveedores { get; set; }
-        public virtual Solicitudes Solicitudes { get; set; }
+        public virtual Compra Compra { get; set; }
+        public virtual Departamento Departamento { get; set; }
     }
 }

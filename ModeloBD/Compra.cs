@@ -12,14 +12,14 @@ namespace ModeloBD
     using System;
     using System.Collections.Generic;
     
-    public partial class Compras
+    public partial class Compra
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Compras()
+        public Compra()
         {
-            this.Movimientos = new HashSet<Movimientos>();
-            this.ProductosCompra = new HashSet<ProductosCompra>();
-            this.Solicitudes = new HashSet<Solicitudes>();
+            this.Movimiento = new HashSet<Movimiento>();
+            this.ProductoCompra = new HashSet<ProductoCompra>();
+            this.Solicitud = new HashSet<Solicitud>();
         }
     
         public int Id_Compra { get; set; }
@@ -28,10 +28,10 @@ namespace ModeloBD
         public Nullable<decimal> Valor { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movimientos> Movimientos { get; set; }
+        public virtual ICollection<Movimiento> Movimiento { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductosCompra> ProductosCompra { get; set; }
+        public virtual ICollection<ProductoCompra> ProductoCompra { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Solicitudes> Solicitudes { get; set; }
+        public virtual ICollection<Solicitud> Solicitud { get; set; }
     }
 }

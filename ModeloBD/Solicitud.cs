@@ -12,12 +12,12 @@ namespace ModeloBD
     using System;
     using System.Collections.Generic;
     
-    public partial class Solicitudes
+    public partial class Solicitud
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Solicitudes()
+        public Solicitud()
         {
-            this.OrdenesCompra = new HashSet<OrdenesCompra>();
+            this.OrdenCompra = new HashSet<OrdenCompra>();
         }
     
         public int Id_Solicitud { get; set; }
@@ -28,10 +28,11 @@ namespace ModeloBD
         public Nullable<System.DateTime> Fecha_Jefe_Apro { get; set; }
         public string Gerencia_Aprovado { get; set; }
         public Nullable<System.DateTime> Fecha_Gerencia_Apro { get; set; }
+        public string Estado { get; set; }
     
-        public virtual Compras Compras { get; set; }
+        public virtual Compra Compra { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrdenesCompra> OrdenesCompra { get; set; }
+        public virtual ICollection<OrdenCompra> OrdenCompra { get; set; }
         public virtual Usuario Usuario { get; set; }
     }
 }

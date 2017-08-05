@@ -29,8 +29,7 @@ namespace ProyectoProgramacion4.Proveedores
 			{
 				using (ProyectoProgra4Entities contexto = new ProyectoProgra4Entities())
 				{
-					contexto.Configuration.LazyLoadingEnabled = false;
-					dgvProveedores.DataSource = contexto.Proveedores.ToList();
+					dgvProveedores.DataSource = contexto.Proveedor.ToList();
 				}
 			}
 			catch (Exception ex)

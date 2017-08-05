@@ -32,10 +32,10 @@ namespace ProyectoProgramacion4.Productos
 		{
 			try
 			{
-				using (ProyectoProgra4Entities contexto = new ProyectoProgra4Entities())
+				using (ModeloBD. ProyectoProgra4Entities contexto = new ProyectoProgra4Entities())
 				{
 					contexto.Configuration.LazyLoadingEnabled = false;
-					dgvProductos.DataSource = contexto.Productos.ToList();
+					dgvProductos.DataSource = contexto.Producto.ToList();
 				}
 			}
 			catch (Exception ex)

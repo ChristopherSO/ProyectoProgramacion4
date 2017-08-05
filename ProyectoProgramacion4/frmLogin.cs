@@ -61,7 +61,8 @@ namespace ProyectoProgramacion4
 		private void btnIniciarSesion_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-            Logear(this.txtusario.Text,this.txtcontra.Text);
-		}
+            new frmMain().Show();
+            //Logear(this.txtusario.Text,this.txtcontra.Text);
+        }
 	}
 }

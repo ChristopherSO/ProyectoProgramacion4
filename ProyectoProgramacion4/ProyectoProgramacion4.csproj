@@ -81,6 +81,19 @@
     <Compile Include="Proveedores\ucProveedores.Designer.cs">
       <DependentUpon>ucProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Solicitudes\frmSolicitud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Solicitudes\frmSolicitud.Designer.cs">
+      <DependentUpon>frmSolicitud.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Solicitudes\SolicitudViewModel.cs" />
+    <Compile Include="Solicitudes\ucSolicitudes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Solicitudes\ucSolicitudes.Designer.cs">
+      <DependentUpon>ucSolicitudes.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +115,12 @@
     </Compile>
     <EmbeddedResource Include="Proveedores\ucProveedores.resx">
       <DependentUpon>ucProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitudes\frmSolicitud.resx">
+      <DependentUpon>frmSolicitud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitudes\ucSolicitudes.resx">
+      <DependentUpon>ucSolicitudes.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -70,12 +70,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(855, 433);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 562);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -93,11 +93,11 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 1);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(853, 61);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(882, 61);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label1
@@ -121,7 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Eras Medium ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(30, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
@@ -140,8 +140,8 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.lblNombreUsuario, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.linkCerrarSesion, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(629, 1);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(658, 1);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -188,16 +188,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.treeView, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.pnlContenido, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(1, 64);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(853, 368);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(882, 497);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // treeView
@@ -207,12 +207,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeView.BackColor = System.Drawing.Color.DimGray;
             this.treeView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.treeView.Font = new System.Drawing.Font("Eras Demi ITC", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView.ForeColor = System.Drawing.Color.White;
-            this.treeView.Indent = 50;
-            this.treeView.ItemHeight = 60;
+            this.treeView.Indent = 25;
+            this.treeView.ItemHeight = 25;
             this.treeView.Location = new System.Drawing.Point(1, 1);
-            this.treeView.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.treeView.Margin = new System.Windows.Forms.Padding(1);
             this.treeView.Name = "treeView";
             treeNode1.Name = "NodoAdministracion1";
             treeNode1.Text = "Proveedores";
@@ -243,7 +243,7 @@
             treeNode11});
             this.treeView.ShowPlusMinus = false;
             this.treeView.ShowRootLines = false;
-            this.treeView.Size = new System.Drawing.Size(118, 366);
+            this.treeView.Size = new System.Drawing.Size(128, 495);
             this.treeView.TabIndex = 0;
             // 
             // pnlContenido
@@ -251,21 +251,22 @@
             this.pnlContenido.AutoSize = true;
             this.pnlContenido.BackColor = System.Drawing.SystemColors.Control;
             this.pnlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenido.Location = new System.Drawing.Point(121, 1);
-            this.pnlContenido.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pnlContenido.Location = new System.Drawing.Point(131, 1);
+            this.pnlContenido.Margin = new System.Windows.Forms.Padding(1);
             this.pnlContenido.Name = "pnlContenido";
             this.pnlContenido.Padding = new System.Windows.Forms.Padding(19, 21, 19, 21);
-            this.pnlContenido.Size = new System.Drawing.Size(731, 366);
+            this.pnlContenido.Size = new System.Drawing.Size(750, 495);
             this.pnlContenido.TabIndex = 1;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 433);
+            this.ClientSize = new System.Drawing.Size(884, 562);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frmMain";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

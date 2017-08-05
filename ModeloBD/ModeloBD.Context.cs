@@ -25,14 +25,14 @@ namespace ModeloBD
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Compras> Compras { get; set; }
+        public virtual DbSet<Compra> Compra { get; set; }
         public virtual DbSet<Departamento> Departamento { get; set; }
-        public virtual DbSet<Movimientos> Movimientos { get; set; }
-        public virtual DbSet<OrdenesCompra> OrdenesCompra { get; set; }
-        public virtual DbSet<Productos> Productos { get; set; }
-        public virtual DbSet<ProductosCompra> ProductosCompra { get; set; }
-        public virtual DbSet<Proveedores> Proveedores { get; set; }
-        public virtual DbSet<Solicitudes> Solicitudes { get; set; }
+        public virtual DbSet<Movimiento> Movimiento { get; set; }
+        public virtual DbSet<OrdenCompra> OrdenCompra { get; set; }
+        public virtual DbSet<Producto> Producto { get; set; }
+        public virtual DbSet<ProductoCompra> ProductoCompra { get; set; }
+        public virtual DbSet<Proveedor> Proveedor { get; set; }
+        public virtual DbSet<Solicitud> Solicitud { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
     }
 }

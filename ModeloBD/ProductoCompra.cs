@@ -12,13 +12,13 @@ namespace ModeloBD
     using System;
     using System.Collections.Generic;
     
-    public partial class ProductosCompra
+    public partial class ProductoCompra
     {
         public int Id_Compra { get; set; }
         public int Id_Producto { get; set; }
         public Nullable<int> Cantidad { get; set; }
     
-        public virtual Compras Compras { get; set; }
-        public virtual Productos Productos { get; set; }
+        public virtual Compra Compra { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

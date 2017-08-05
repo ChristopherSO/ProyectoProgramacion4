@@ -17,18 +17,18 @@ namespace ModeloBD
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Departamento()
         {
-            this.Movimientos = new HashSet<Movimientos>();
+            this.Movimiento = new HashSet<Movimiento>();
             this.Usuario = new HashSet<Usuario>();
         }
     
         public int Id_Departamento { get; set; }
         public string Nom_Departamento { get; set; }
-        public int Id_Jefe { get; set; }
+        public Nullable<int> Id_Jefe { get; set; }
         public decimal Presupuesto { get; set; }
         public decimal Monto_Proceso { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Movimientos> Movimientos { get; set; }
+        public virtual ICollection<Movimiento> Movimiento { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuario { get; set; }
     }

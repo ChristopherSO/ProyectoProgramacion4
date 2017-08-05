@@ -17,7 +17,7 @@ namespace ModeloBD
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuario()
         {
-            this.Solicitudes = new HashSet<Solicitudes>();
+            this.Solicitud = new HashSet<Solicitud>();
         }
     
         public int Id_Usuario { get; set; }
@@ -30,6 +30,6 @@ namespace ModeloBD
     
         public virtual Departamento Departamento { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Solicitudes> Solicitudes { get; set; }
+        public virtual ICollection<Solicitud> Solicitud { get; set; }
     }
 }

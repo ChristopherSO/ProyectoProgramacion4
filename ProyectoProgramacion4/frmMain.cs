@@ -1,4 +1,5 @@
 ﻿using ProyectoProgramacion4.Proveedores;
+using ProyectoProgramacion4.Solicitudes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,8 +22,11 @@ namespace ProyectoProgramacion4
 		private void frmMain_Load(object sender, EventArgs e)
 		{
 			treeView.ExpandAll();
-			cambiarPantalla(new ucProveedores());
-		}
+            //treeView.Nodes.Remove(treeView.Nodes["NodoAdministracion"].Nodes["NodoAdministracion1"]);
+            
+			//cambiarPantalla(new ucProveedores());
+            cambiarPantalla(new ucSolicitudes());
+        }
 
 		public void cambiarPantalla(UserControl pantalla)
 		{
@@ -30,5 +34,10 @@ namespace ProyectoProgramacion4
 			pnlContenido.Controls.Add(pantalla);
 			pnlContenido.Refresh();
 		}
-	}
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }

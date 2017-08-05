@@ -12,12 +12,12 @@ namespace ModeloBD
     using System;
     using System.Collections.Generic;
     
-    public partial class Productos
+    public partial class Producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Productos()
+        public Producto()
         {
-            this.ProductosCompra = new HashSet<ProductosCompra>();
+            this.ProductoCompra = new HashSet<ProductoCompra>();
         }
     
         public int Id_Producto { get; set; }
@@ -26,8 +26,8 @@ namespace ModeloBD
         public string Nom_Producto { get; set; }
         public decimal Precio { get; set; }
     
-        public virtual Proveedores Proveedores { get; set; }
+        public virtual Proveedor Proveedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductosCompra> ProductosCompra { get; set; }
+        public virtual ICollection<ProductoCompra> ProductoCompra { get; set; }
     }
 }
