@@ -78,7 +78,7 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(151, 67);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(109, 30);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -241,6 +241,7 @@
             this.txtcontra.Location = new System.Drawing.Point(1, 100);
             this.txtcontra.Margin = new System.Windows.Forms.Padding(1);
             this.txtcontra.Name = "txtcontra";
+            this.txtcontra.PasswordChar = '*';
             this.txtcontra.Size = new System.Drawing.Size(218, 26);
             this.txtcontra.TabIndex = 4;
             // 

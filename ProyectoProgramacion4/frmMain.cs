@@ -9,15 +9,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ModeloBD;
+
 
 namespace ProyectoProgramacion4
 {
 	public partial class frmMain : Form
 	{
-		public frmMain()
+		public frmMain(string nombre, string departamento)
 		{
 			InitializeComponent();
-		}
+            using (ProyectoProgra4Entities context = new ProyectoProgra4Entities()) {
+                lblNombreUsuario.Text = "Bienvenido " + nombre;
+                lblDepartamento.Text = "Departamento de " + departamento;
+            }
+        }
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
@@ -35,9 +41,21 @@ namespace ProyectoProgramacion4
 			pnlContenido.Refresh();
 		}
 
+		private void volverALogin()
+		{
+			this.Hide();
+			frmLogin l = new frmLogin();
+			l.Show();
+		}
+		
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+			volverALogin();
         }
+
+        private void linkCerrarSesion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+			volverALogin();
+		}
     }
 }

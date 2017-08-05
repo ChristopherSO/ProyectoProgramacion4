@@ -28,24 +28,24 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Proveedores");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Productos");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Servicios");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Presupuestos");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode(" Administración", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Productos");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Servicios");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Por proveedor");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode(" Compras", new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode(" Contabilidad");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode(" Reportes");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Proveedores");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Productos");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Servicios");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Presupuestos");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode(" Administración", new System.Windows.Forms.TreeNode[] {
+            treeNode12,
+            treeNode13,
+            treeNode14,
+            treeNode15});
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Productos");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Servicios");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Por proveedor");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode(" Compras", new System.Windows.Forms.TreeNode[] {
+            treeNode17,
+            treeNode18,
+            treeNode19});
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode(" Contabilidad");
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode(" Reportes");
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.treeView = new System.Windows.Forms.TreeView();
             this.pnlContenido = new System.Windows.Forms.Panel();
+            this.lblDepartamento = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -89,6 +90,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
+            this.tableLayoutPanel2.Controls.Add(this.lblDepartamento, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 3, 0);
@@ -140,7 +142,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.lblNombreUsuario, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.linkCerrarSesion, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(658, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(629, 1);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -155,14 +157,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.White;
             this.lblNombreUsuario.Location = new System.Drawing.Point(1, 0);
             this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(221, 35);
             this.lblNombreUsuario.TabIndex = 0;
-            this.lblNombreUsuario.Text = "Peter Parker";
             this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // linkCerrarSesion
@@ -181,6 +182,7 @@
             this.linkCerrarSesion.TabStop = true;
             this.linkCerrarSesion.Text = "Cerrar sesión";
             this.linkCerrarSesion.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.linkCerrarSesion.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCerrarSesion_LinkClicked);
             // 
             // tableLayoutPanel4
             // 
@@ -214,33 +216,33 @@
             this.treeView.Location = new System.Drawing.Point(1, 1);
             this.treeView.Margin = new System.Windows.Forms.Padding(1);
             this.treeView.Name = "treeView";
-            treeNode1.Name = "NodoAdministracion1";
-            treeNode1.Text = "Proveedores";
-            treeNode2.Name = "NodoAdministracion2";
-            treeNode2.Text = "Productos";
-            treeNode3.Name = "NodoAdministracion3";
-            treeNode3.Text = "Servicios";
-            treeNode4.Name = "NodoAdministracion4";
-            treeNode4.Text = "Presupuestos";
-            treeNode5.Name = "NodoAdministracion";
-            treeNode5.Text = " Administración";
-            treeNode6.Name = "NodoCompras1";
-            treeNode6.Text = "Productos";
-            treeNode7.Name = "NodoCompras2";
-            treeNode7.Text = "Servicios";
-            treeNode8.Name = "NodoCompras3";
-            treeNode8.Text = "Por proveedor";
-            treeNode9.Name = "NodoCompras";
-            treeNode9.Text = " Compras";
-            treeNode10.Name = "NodoContabilidad";
-            treeNode10.Text = " Contabilidad";
-            treeNode11.Name = "NodoReportes";
-            treeNode11.Text = " Reportes";
+            treeNode12.Name = "NodoAdministracion1";
+            treeNode12.Text = "Proveedores";
+            treeNode13.Name = "NodoAdministracion2";
+            treeNode13.Text = "Productos";
+            treeNode14.Name = "NodoAdministracion3";
+            treeNode14.Text = "Servicios";
+            treeNode15.Name = "NodoAdministracion4";
+            treeNode15.Text = "Presupuestos";
+            treeNode16.Name = "NodoAdministracion";
+            treeNode16.Text = " Administración";
+            treeNode17.Name = "NodoCompras1";
+            treeNode17.Text = "Productos";
+            treeNode18.Name = "NodoCompras2";
+            treeNode18.Text = "Servicios";
+            treeNode19.Name = "NodoCompras3";
+            treeNode19.Text = "Por proveedor";
+            treeNode20.Name = "NodoCompras";
+            treeNode20.Text = " Compras";
+            treeNode21.Name = "NodoContabilidad";
+            treeNode21.Text = " Contabilidad";
+            treeNode22.Name = "NodoReportes";
+            treeNode22.Text = " Reportes";
             this.treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode9,
-            treeNode10,
-            treeNode11});
+            treeNode16,
+            treeNode20,
+            treeNode21,
+            treeNode22});
             this.treeView.ShowPlusMinus = false;
             this.treeView.ShowRootLines = false;
             this.treeView.Size = new System.Drawing.Size(128, 495);
@@ -251,12 +253,23 @@
             this.pnlContenido.AutoSize = true;
             this.pnlContenido.BackColor = System.Drawing.SystemColors.Control;
             this.pnlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenido.Location = new System.Drawing.Point(131, 1);
+            this.pnlContenido.Location = new System.Drawing.Point(121, 1);
             this.pnlContenido.Margin = new System.Windows.Forms.Padding(1);
             this.pnlContenido.Name = "pnlContenido";
             this.pnlContenido.Padding = new System.Windows.Forms.Padding(19, 21, 19, 21);
             this.pnlContenido.Size = new System.Drawing.Size(750, 495);
             this.pnlContenido.TabIndex = 1;
+            // 
+            // lblDepartamento
+            // 
+            this.lblDepartamento.AutoSize = true;
+            this.lblDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDepartamento.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblDepartamento.Location = new System.Drawing.Point(333, 0);
+            this.lblDepartamento.Name = "lblDepartamento";
+            this.lblDepartamento.Size = new System.Drawing.Size(60, 24);
+            this.lblDepartamento.TabIndex = 3;
+            this.lblDepartamento.Text = "label3";
             // 
             // frmMain
             // 
@@ -291,6 +304,7 @@
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
 		private System.Windows.Forms.TreeView treeView;
 		private System.Windows.Forms.Panel pnlContenido;
-	}
+        private System.Windows.Forms.Label lblDepartamento;
+    }
 }
 

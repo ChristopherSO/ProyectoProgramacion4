@@ -20,39 +20,46 @@ namespace ProyectoProgramacion4
 
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=LAPTOP-R74K5D9H\SQLEXPRESS;Initial Catalog=ProyectoProgra4;Integrated Security=True");
-
-
-
-        public void Logear(string usuario, string contrasena) {
+        public void Login()
+        {
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("select u.Nombre, d.Nom_Departamento from Usuario u join Departamento d on d.Id_Departamento = u.Id_Departamento where u.Nom_Login = @usuario AND u.Contraseña = @contrasena",con);
-                cmd.Parameters.AddWithValue("usuario", usuario);
-                cmd.Parameters.AddWithValue("contrasena", contrasena);
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
+                bool existe;
+                string depar = "";
+                using (ProyectoProgra4Entities context = new ProyectoProgra4Entities())
+                {
+                    List<Usuario> usuarios = context.Usuario.ToList();
+                    List<Departamento> Department = context.Departamento.ToList();
+                    existe = usuarios.Any(u => u.Nom_Login == txtusario.Text && u.Contraseña == txtcontra.Text);
+                    var join = from Usuario in usuarios
+                               join Departamento in Department on
+                               Usuario.Id_Departamento equals Departamento.Id_Departamento
+                               select new { Departamento.Nom_Departamento };
+                              
 
+                    //existe = usuarios.Select(u => u.Id_Departamento));
+                    //existe = Department.Select(d => d.Nom_Departamento).Where(d => d)
+                    //existe = usuarios.Select(u=>u.Id_Departamento)
 
-                if (dt.Rows.Count == 1) {
+                }
+                if (existe)
+                {
                     this.Hide();
-                    if (dt.Rows[0][1].ToString() == "frmMain")
-                    {
-                        new frmMain().Show();
-                    }
-                    else {
-                        MessageBox.Show("Usuario y/o contraseña incorrecta");
-                    }
+                    frmMain m = new frmMain(txtusario.Text,depar);
+                    m.Show();
+
+                }
+                else {
+                    MessageBox.Show("Usuario y/o contraseña incorrecta");
                 }
             }
             catch (Exception e)
             {
+
                 MessageBox.Show(e.Message);
             }
-            
         }
+
 		private void lblSalir_Click(object sender, EventArgs e)
 		{
 			Application.Exit();
@@ -60,9 +67,7 @@ namespace ProyectoProgramacion4
 
 		private void btnIniciarSesion_Click(object sender, EventArgs e)
 		{
-			this.Hide();
-            new frmMain().Show();
-            //Logear(this.txtusario.Text,this.txtcontra.Text);
-        }
+            Login();
+		}
 	}
 }
