@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProyectoProgramacion4.Proveedores
 {
-	public partial class ucProveedores : UserControl
+	public partial class ucProveedores : BaseUserControl
 	{
 
 		public ucProveedores()
@@ -40,7 +40,6 @@ namespace ProyectoProgramacion4.Proveedores
 
 		private void btnVerProductos_Click(object sender, EventArgs e)
 		{
-			frmMain FormularioPadre = (frmMain)this.FindForm();
 			ucProductos pantalla = new ucProductos();
 
 			//var Producto = (ModeloBD.Productos)dgvProveedores.SelectedRows.Cast<ModeloBD.Productos>().First();

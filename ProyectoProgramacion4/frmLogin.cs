@@ -69,5 +69,13 @@ namespace ProyectoProgramacion4
 		{
             Login();
 		}
+
+		private void txtcontra_KeyUp(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				Login();
+			}
+		}
 	}
 }

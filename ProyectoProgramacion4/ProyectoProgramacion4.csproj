@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     <Compile Include="Solicitudes\ucSolicitudes.Designer.cs">
       <DependentUpon>ucSolicitudes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ucMenuLateral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucMenuLateral.Designer.cs">
+      <DependentUpon>ucMenuLateral.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Solicitudes\ucSolicitudes.resx">
       <DependentUpon>ucSolicitudes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucMenuLateral.resx">
+      <DependentUpon>ucMenuLateral.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

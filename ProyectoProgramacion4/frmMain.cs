@@ -27,12 +27,11 @@ namespace ProyectoProgramacion4
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			treeView.ExpandAll();
-            //treeView.Nodes.Remove(treeView.Nodes["NodoAdministracion"].Nodes["NodoAdministracion1"]);
-            
 			//cambiarPantalla(new ucProveedores());
-            cambiarPantalla(new ucSolicitudes());
-        }
+			cambiarPantalla(new ucSolicitudes());
+			frmMain FormularioPadre = (frmMain)this.FindForm();
+			var ctrls = FormularioPadre.Controls.Find("tlpMenu", true);
+		}
 
 		public void cambiarPantalla(UserControl pantalla)
 		{

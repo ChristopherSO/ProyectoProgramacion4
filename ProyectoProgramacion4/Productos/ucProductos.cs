@@ -11,7 +11,7 @@ using ModeloBD;
 
 namespace ProyectoProgramacion4.Productos
 {
-	public partial class ucProductos : UserControl
+	public partial class ucProductos : BaseUserControl
 	{
 		public string NombreProveedor { get; set; }
 
