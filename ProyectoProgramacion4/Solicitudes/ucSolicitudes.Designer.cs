@@ -31,7 +31,6 @@
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dgvSolicitudes = new System.Windows.Forms.DataGridView();
-			this.btnVerEnDetalle = new System.Windows.Forms.Button();
 			this.Id_Solicitud = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Nom_Departamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Fecha_Solicitud = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +38,7 @@
 			this.RequiereAprobacionJefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.RequiereAprobacionGerencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnVerEnDetalle = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSolicitudes)).BeginInit();
 			this.SuspendLayout();
@@ -70,7 +70,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.AutoSize = true;
 			this.label2.BackColor = System.Drawing.SystemColors.Control;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Font = new System.Drawing.Font("Eras Demi ITC", 14.1F);
 			this.label2.ForeColor = System.Drawing.Color.DarkCyan;
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Margin = new System.Windows.Forms.Padding(0);
@@ -107,20 +107,6 @@
 			this.dgvSolicitudes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvSolicitudes.Size = new System.Drawing.Size(1434, 757);
 			this.dgvSolicitudes.TabIndex = 3;
-			// 
-			// btnVerEnDetalle
-			// 
-			this.btnVerEnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.btnVerEnDetalle.BackColor = System.Drawing.Color.DarkCyan;
-			this.btnVerEnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnVerEnDetalle.ForeColor = System.Drawing.Color.White;
-			this.btnVerEnDetalle.Location = new System.Drawing.Point(1186, 883);
-			this.btnVerEnDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.btnVerEnDetalle.Name = "btnVerEnDetalle";
-			this.btnVerEnDetalle.Size = new System.Drawing.Size(251, 69);
-			this.btnVerEnDetalle.TabIndex = 4;
-			this.btnVerEnDetalle.Text = "Ver en detalle";
-			this.btnVerEnDetalle.UseVisualStyleBackColor = false;
 			// 
 			// Id_Solicitud
 			// 
@@ -177,6 +163,20 @@
 			this.Estado.HeaderText = "Estado";
 			this.Estado.Name = "Estado";
 			this.Estado.ReadOnly = true;
+			// 
+			// btnVerEnDetalle
+			// 
+			this.btnVerEnDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btnVerEnDetalle.BackColor = System.Drawing.Color.DarkCyan;
+			this.btnVerEnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnVerEnDetalle.ForeColor = System.Drawing.Color.White;
+			this.btnVerEnDetalle.Location = new System.Drawing.Point(1186, 883);
+			this.btnVerEnDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.btnVerEnDetalle.Name = "btnVerEnDetalle";
+			this.btnVerEnDetalle.Size = new System.Drawing.Size(251, 69);
+			this.btnVerEnDetalle.TabIndex = 4;
+			this.btnVerEnDetalle.Text = "Ver en detalle";
+			this.btnVerEnDetalle.UseVisualStyleBackColor = false;
 			// 
 			// ucSolicitudes
 			// 

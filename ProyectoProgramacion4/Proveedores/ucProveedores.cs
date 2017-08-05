@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProyectoProgramacion4.Proveedores
 {
-	public partial class ucProveedores : BaseUserControl
+	public partial class ucProveedores : UserControl
 	{
 
 		public ucProveedores()
@@ -45,6 +45,8 @@ namespace ProyectoProgramacion4.Proveedores
 			//var Producto = (ModeloBD.Productos)dgvProveedores.SelectedRows.Cast<ModeloBD.Productos>().First();
 			//var Producto = (ModeloBD.Productos)selectedRow.DataBoundItem;
 			pantalla.NombreProveedor = dgvProveedores.SelectedRows[0].Cells["Nombre"].Value.ToString();
+
+			frmMain FormularioPadre = (frmMain)this.FindForm();
 			FormularioPadre.cambiarPantalla(pantalla);
 		}
 	}

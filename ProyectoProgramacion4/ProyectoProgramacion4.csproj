@@ -55,12 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="BaseUserControl.Designer.cs">
-      <DependentUpon>BaseUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>

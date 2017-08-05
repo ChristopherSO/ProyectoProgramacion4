@@ -11,8 +11,8 @@ using ModeloBD;
 
 namespace ProyectoProgramacion4.Solicitudes
 {
-    public partial class ucSolicitudes : BaseUserControl
-    {
+    public partial class ucSolicitudes : UserControl
+	{
         public ucSolicitudes()
         {
             InitializeComponent();

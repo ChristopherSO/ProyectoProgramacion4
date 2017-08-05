@@ -12,7 +12,7 @@ using ProyectoProgramacion4.Productos;
 
 namespace ProyectoProgramacion4
 {
-	public partial class ucMenuLateral : BaseUserControl
+	public partial class ucMenuLateral : UserControl
 	{
 		public ucMenuLateral()
 		{
@@ -21,11 +21,13 @@ namespace ProyectoProgramacion4
 
 		private void lnkProveedores_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
+			frmMain FormularioPadre = (frmMain)this.FindForm();
 			FormularioPadre.cambiarPantalla(new ucProveedores());
 		}
 
 		private void lnkAdmProductos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
+			frmMain FormularioPadre = (frmMain)this.FindForm();
 			FormularioPadre.cambiarPantalla(new ucProductos());
 		}
 	}
