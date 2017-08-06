@@ -355,6 +355,7 @@
 			this.lnkAdmServicios.Text = "Servicios";
 			this.lnkAdmServicios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.lnkAdmServicios.VisitedLinkColor = System.Drawing.Color.White;
+			this.lnkAdmServicios.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkAdmServicios_LinkClicked);
 			// 
 			// tableLayoutPanel7
 			// 

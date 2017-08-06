@@ -1,5 +1,6 @@
 ﻿using ModeloBD;
 using ProyectoProgramacion4.Productos;
+using ProyectoProgramacion4.Servicios;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -41,9 +42,15 @@ namespace ProyectoProgramacion4.Proveedores
 		private void btnVerProductos_Click(object sender, EventArgs e)
 		{
 			ucProductos pantalla = new ucProductos();
+			pantalla.NombreProveedor = dgvProveedores.SelectedRows[0].Cells["Nombre"].Value.ToString();
 
-			//var Producto = (ModeloBD.Productos)dgvProveedores.SelectedRows.Cast<ModeloBD.Productos>().First();
-			//var Producto = (ModeloBD.Productos)selectedRow.DataBoundItem;
+			frmMain FormularioPadre = (frmMain)this.FindForm();
+			FormularioPadre.cambiarPantalla(pantalla);
+		}
+
+		private void btnVerServicios_Click(object sender, EventArgs e)
+		{
+			ucServicios pantalla = new ucServicios();
 			pantalla.NombreProveedor = dgvProveedores.SelectedRows[0].Cells["Nombre"].Value.ToString();
 
 			frmMain FormularioPadre = (frmMain)this.FindForm();

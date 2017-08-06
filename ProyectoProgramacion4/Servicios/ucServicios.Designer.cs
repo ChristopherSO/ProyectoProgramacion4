@@ -1,6 +1,6 @@
-﻿namespace ProyectoProgramacion4.Productos
+﻿namespace ProyectoProgramacion4.Servicios
 {
-	partial class ucProductos
+	partial class ucServicios
 	{
 		/// <summary> 
 		/// Variable del diseñador necesaria.
@@ -33,7 +33,7 @@
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.btnAgregar = new System.Windows.Forms.Button();
-			this.dgvProductos = new System.Windows.Forms.DataGridView();
+			this.dgvServicios = new System.Windows.Forms.DataGridView();
 			this.Proveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +42,7 @@
 			this.lblNombreProveedor = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
 			this.tableLayoutPanel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -53,7 +53,7 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.btnAgregar, 0, 3);
-			this.tableLayoutPanel1.Controls.Add(this.dgvProductos, 0, 2);
+			this.tableLayoutPanel1.Controls.Add(this.dgvServicios, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -64,7 +64,7 @@
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(1436, 950);
-			this.tableLayoutPanel1.TabIndex = 1;
+			this.tableLayoutPanel1.TabIndex = 2;
 			// 
 			// label2
 			// 
@@ -76,9 +76,9 @@
 			this.label2.Location = new System.Drawing.Point(0, 0);
 			this.label2.Margin = new System.Windows.Forms.Padding(0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(253, 90);
+			this.label2.Size = new System.Drawing.Size(221, 90);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "Productos";
+			this.label2.Text = "Servicios";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// btnAgregar
@@ -94,11 +94,11 @@
 			this.btnAgregar.Text = "Agregar a lista de compras";
 			this.btnAgregar.UseVisualStyleBackColor = false;
 			// 
-			// dgvProductos
+			// dgvServicios
 			// 
-			this.dgvProductos.AllowUserToAddRows = false;
-			this.dgvProductos.AllowUserToDeleteRows = false;
-			this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+			this.dgvServicios.AllowUserToAddRows = false;
+			this.dgvServicios.AllowUserToDeleteRows = false;
+			this.dgvServicios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -108,9 +108,9 @@
 			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
 			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-			this.dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-			this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgvServicios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+			this.dgvServicios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvServicios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Proveedor,
             this.Tipo,
             this.Nombre,
@@ -123,16 +123,16 @@
 			dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
 			dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
 			dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-			this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle2;
-			this.dgvProductos.Location = new System.Drawing.Point(3, 173);
-			this.dgvProductos.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
-			this.dgvProductos.MultiSelect = false;
-			this.dgvProductos.Name = "dgvProductos";
-			this.dgvProductos.ReadOnly = true;
-			this.dgvProductos.RowTemplate.Height = 40;
-			this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvProductos.Size = new System.Drawing.Size(1430, 671);
-			this.dgvProductos.TabIndex = 3;
+			this.dgvServicios.DefaultCellStyle = dataGridViewCellStyle2;
+			this.dgvServicios.Location = new System.Drawing.Point(3, 173);
+			this.dgvServicios.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
+			this.dgvServicios.MultiSelect = false;
+			this.dgvServicios.Name = "dgvServicios";
+			this.dgvServicios.ReadOnly = true;
+			this.dgvServicios.RowTemplate.Height = 40;
+			this.dgvServicios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgvServicios.Size = new System.Drawing.Size(1430, 671);
+			this.dgvServicios.TabIndex = 3;
 			// 
 			// Proveedor
 			// 
@@ -210,17 +210,17 @@
 			this.label1.Text = "Proveedor:";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
-			// ucProductos
+			// ucServicios
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.tableLayoutPanel1);
-			this.Name = "ucProductos";
+			this.Name = "ucServicios";
 			this.Size = new System.Drawing.Size(1436, 950);
-			this.Load += new System.EventHandler(this.ucProductos_Load);
+			this.Load += new System.EventHandler(this.ucServicios_Load);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).EndInit();
 			this.tableLayoutPanel2.ResumeLayout(false);
 			this.tableLayoutPanel2.PerformLayout();
 			this.ResumeLayout(false);
@@ -232,8 +232,8 @@
 
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.DataGridView dgvProductos;
 		private System.Windows.Forms.Button btnAgregar;
+		private System.Windows.Forms.DataGridView dgvServicios;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
 		private System.Windows.Forms.Label lblNombreProveedor;
 		private System.Windows.Forms.Label label1;

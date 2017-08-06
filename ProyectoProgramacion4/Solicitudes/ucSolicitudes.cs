@@ -37,8 +37,8 @@ namespace ProyectoProgramacion4.Solicitudes
 						NombreDepartamento = x.Usuario.Departamento.Nom_Departamento,
 						FechaSolicitud = x.Fecha_Solicitud,
 						MontoCompra = (decimal)x.Compra.Valor,
-						RequiereAprobacionJefe = (x.Compra.Valor > 1000000) ? "No" : "Sí",
-						RequiereAprobacionGerencia = (x.Compra.Valor >= 5000000) ? "No" : "Sí",
+						RequiereAprobacionJefe = (x.Compra.Valor > 1000000) ? "Sí" : "No",
+						RequiereAprobacionGerencia = (x.Compra.Valor >= 5000000) ? "Sí" : "No",
 						Estado = x.Estado
 					}).ToList();
 					dgvSolicitudes.DataSource = bindingSource;

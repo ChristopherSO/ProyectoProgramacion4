@@ -81,6 +81,12 @@
     <Compile Include="Proveedores\ucProveedores.Designer.cs">
       <DependentUpon>ucProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Servicios\ucServicios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Servicios\ucServicios.Designer.cs">
+      <DependentUpon>ucServicios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Solicitudes\frmSolicitud.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="Proveedores\ucProveedores.resx">
       <DependentUpon>ucProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Servicios\ucServicios.resx">
+      <DependentUpon>ucServicios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Solicitudes\frmSolicitud.resx">
       <DependentUpon>frmSolicitud.cs</DependentUpon>

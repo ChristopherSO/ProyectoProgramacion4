@@ -49,7 +49,7 @@ namespace ProyectoProgramacion4
 		
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-			volverALogin();
+			Application.Exit();
         }
 
         private void linkCerrarSesion_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

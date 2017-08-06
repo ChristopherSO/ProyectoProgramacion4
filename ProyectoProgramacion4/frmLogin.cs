@@ -77,5 +77,13 @@ namespace ProyectoProgramacion4
 				Login();
 			}
 		}
+
+		private void txtusario_KeyUp(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+			{
+				Login();
+			}
+		}
 	}
 }

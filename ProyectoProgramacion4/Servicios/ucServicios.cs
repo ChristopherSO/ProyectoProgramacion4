@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ModeloBD;
 
-namespace ProyectoProgramacion4.Productos
+namespace ProyectoProgramacion4.Servicios
 {
-	public partial class ucProductos : UserControl
+	public partial class ucServicios : UserControl
 	{
 		public string NombreProveedor { get; set; }
 
-		public ucProductos()
+		public ucServicios()
 		{
 			InitializeComponent();
-			dgvProductos.AutoGenerateColumns = false;
+			dgvServicios.AutoGenerateColumns = false;
 		}
 
-		private void ucProductos_Load(object sender, EventArgs e)
+		private void ucServicios_Load(object sender, EventArgs e)
 		{
 			this.Dock = DockStyle.Fill;
 			lblNombreProveedor.Text = NombreProveedor;
-			cargarProductos();
+			cargarServicios();
 
 			if (NombreProveedor == null)
 			{
@@ -35,7 +35,7 @@ namespace ProyectoProgramacion4.Productos
 			}
 		}
 
-		private void cargarProductos()
+		private void cargarServicios()
 		{
 			try
 			{
@@ -43,19 +43,18 @@ namespace ProyectoProgramacion4.Productos
 				{
 					if (NombreProveedor == null)
 					{
-						dgvProductos.DataSource = contexto.Producto
-						.Where(x => x.Tipo == "Producto")
+						dgvServicios.DataSource = contexto.Producto
+						.Where(x => x.Tipo == "Servicio")
 						.Select(x => new {
 							x.Proveedor.Nom_Proveedor,
 							x.Tipo,
 							x.Nom_Producto,
 							x.Precio
 						}).ToList();
-					}
-					else
+					} else
 					{
-						dgvProductos.DataSource = contexto.Producto
-						.Where(x => x.Tipo == "Producto" && x.Proveedor.Nom_Proveedor.Equals(NombreProveedor))
+						dgvServicios.DataSource = contexto.Producto
+						.Where(x => x.Tipo == "Servicio" && x.Proveedor.Nom_Proveedor.Equals(NombreProveedor))
 						.Select(x => new {
 							x.Proveedor.Nom_Proveedor,
 							x.Tipo,
@@ -63,7 +62,7 @@ namespace ProyectoProgramacion4.Productos
 							x.Precio
 						}).ToList();
 
-						dgvProductos.Columns[0].Visible = false;
+						dgvServicios.Columns[0].Visible = false;
 					}
 				}
 			}

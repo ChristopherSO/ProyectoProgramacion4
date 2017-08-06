@@ -217,6 +217,8 @@
 			this.txtusario.Name = "txtusario";
 			this.txtusario.Size = new System.Drawing.Size(580, 53);
 			this.txtusario.TabIndex = 1;
+			this.txtusario.Text = "csuarez";
+			this.txtusario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtusario_KeyUp);
 			// 
 			// label4
 			// 
@@ -242,6 +244,7 @@
 			this.txtcontra.PasswordChar = '*';
 			this.txtcontra.Size = new System.Drawing.Size(580, 53);
 			this.txtcontra.TabIndex = 4;
+			this.txtcontra.Text = "123";
 			this.txtcontra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtcontra_KeyUp);
 			// 
 			// lblSalir
