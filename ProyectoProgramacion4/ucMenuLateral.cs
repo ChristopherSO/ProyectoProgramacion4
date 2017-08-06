@@ -23,6 +23,11 @@ namespace ProyectoProgramacion4
 			InitializeComponent();
 		}
 
+		private void ucMenuLateral_Load(object sender, EventArgs e)
+		{
+			this.Dock = DockStyle.Fill;
+		}
+
 		private void CambiarPantalla(UserControl pantalla)
 		{
 			if (formularioPadre == null)
