@@ -72,5 +72,5 @@ namespace ProyectoProgramacion4.Productos
 				MessageBox.Show(ex.ToString());
 			}
 		}
-	}
+    }
 }

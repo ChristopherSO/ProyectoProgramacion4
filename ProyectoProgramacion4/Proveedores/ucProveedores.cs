@@ -56,5 +56,5 @@ namespace ProyectoProgramacion4.Proveedores
 			frmMain FormularioPadre = (frmMain)this.FindForm();
 			FormularioPadre.cambiarPantalla(pantalla);
 		}
-	}
+    }
 }
