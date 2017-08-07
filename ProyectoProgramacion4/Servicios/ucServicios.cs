@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ModeloBD;
+using ProyectoProgramacion4.ListaDeCompras;
 
 namespace ProyectoProgramacion4.Servicios
 {
@@ -87,7 +88,7 @@ namespace ProyectoProgramacion4.Servicios
 
 			Producto producto = new Producto
 			{
-				Proveedor = proveedor,
+				Proveedor = formularioPadre.GetProveedorPorId((int)filaSeleccionada.Cells[5].Value),
 				Tipo = (string)filaSeleccionada.Cells[1].Value,
 				Nom_Producto = (string)filaSeleccionada.Cells[2].Value,
 				Precio = (decimal)filaSeleccionada.Cells[3].Value,
@@ -109,6 +110,11 @@ namespace ProyectoProgramacion4.Servicios
 
 			MessageBox.Show("Se agregó el servicio " + producto.Nom_Producto + " a la lista de compras.");
 
+		}
+
+		private void lnkVerArticulos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			formularioPadre.cambiarPantalla(new ucListaDeCompras());
 		}
 	}
 }

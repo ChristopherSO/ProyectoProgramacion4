@@ -11,6 +11,7 @@ using ProyectoProgramacion4.Proveedores;
 using ProyectoProgramacion4.Productos;
 using ProyectoProgramacion4.Servicios;
 using ProyectoProgramacion4.Solicitudes;
+using ProyectoProgramacion4.ListaDeCompras;
 
 namespace ProyectoProgramacion4
 {
@@ -70,6 +71,11 @@ namespace ProyectoProgramacion4
 		private void lnkSolicitudes_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
 			CambiarPantalla(new ucSolicitudes());
+		}
+
+		private void lnkListaCompras_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			CambiarPantalla(new ucListaDeCompras());
 		}
 	}
 }

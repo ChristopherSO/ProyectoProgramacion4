@@ -183,5 +183,22 @@ namespace ProyectoProgramacion4
         {
 			volverALogin();
 		}
+
+		public Proveedor GetProveedorPorId(int idProveedor)
+		{
+			Proveedor proveedor = null;
+			try
+			{
+				using (ProyectoProgra4Entities contexto = new ProyectoProgra4Entities())
+				{
+					proveedor = contexto.Proveedor.Where(x => x.Id_Proveedor == idProveedor).FirstOrDefault();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.ToString());
+			}
+			return proveedor;
+		}
 	}
 }

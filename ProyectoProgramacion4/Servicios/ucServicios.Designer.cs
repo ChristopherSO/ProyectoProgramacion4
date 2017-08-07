@@ -36,18 +36,18 @@
 			this.lblCantArticulos = new System.Windows.Forms.Label();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.dgvServicios = new System.Windows.Forms.DataGridView();
-			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-			this.lblNombreProveedor = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-			this.lnkVerArticulos = new System.Windows.Forms.LinkLabel();
-			this.label2 = new System.Windows.Forms.Label();
 			this.NombreProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.IdProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+			this.lblNombreProveedor = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+			this.lnkVerArticulos = new System.Windows.Forms.LinkLabel();
+			this.label2 = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
@@ -168,6 +168,57 @@
 			this.dgvServicios.Size = new System.Drawing.Size(1430, 632);
 			this.dgvServicios.TabIndex = 3;
 			// 
+			// NombreProveedor
+			// 
+			this.NombreProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+			this.NombreProveedor.DataPropertyName = "Nom_Proveedor";
+			this.NombreProveedor.HeaderText = "Proveedor";
+			this.NombreProveedor.Name = "NombreProveedor";
+			this.NombreProveedor.ReadOnly = true;
+			this.NombreProveedor.Width = 207;
+			// 
+			// Tipo
+			// 
+			this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+			this.Tipo.DataPropertyName = "Tipo";
+			this.Tipo.HeaderText = "Tipo";
+			this.Tipo.Name = "Tipo";
+			this.Tipo.ReadOnly = true;
+			this.Tipo.Visible = false;
+			// 
+			// Nombre
+			// 
+			this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Nombre.DataPropertyName = "Nom_Producto";
+			this.Nombre.HeaderText = "Nombre producto";
+			this.Nombre.Name = "Nombre";
+			this.Nombre.ReadOnly = true;
+			// 
+			// Precio
+			// 
+			this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+			this.Precio.DataPropertyName = "Precio";
+			this.Precio.HeaderText = "Precio";
+			this.Precio.Name = "Precio";
+			this.Precio.ReadOnly = true;
+			this.Precio.Width = 154;
+			// 
+			// IdProducto
+			// 
+			this.IdProducto.DataPropertyName = "Id_Producto";
+			this.IdProducto.HeaderText = "IdProducto";
+			this.IdProducto.Name = "IdProducto";
+			this.IdProducto.ReadOnly = true;
+			this.IdProducto.Visible = false;
+			// 
+			// IdProveedor
+			// 
+			this.IdProveedor.DataPropertyName = "Id_Proveedor";
+			this.IdProveedor.HeaderText = "IdProveedor";
+			this.IdProveedor.Name = "IdProveedor";
+			this.IdProveedor.ReadOnly = true;
+			this.IdProveedor.Visible = false;
+			// 
 			// tableLayoutPanel2
 			// 
 			this.tableLayoutPanel2.ColumnCount = 2;
@@ -239,6 +290,7 @@
 			this.lnkVerArticulos.TabIndex = 4;
 			this.lnkVerArticulos.TabStop = true;
 			this.lnkVerArticulos.Text = "Ver artículos";
+			this.lnkVerArticulos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkVerArticulos_LinkClicked);
 			// 
 			// label2
 			// 
@@ -254,58 +306,6 @@
 			this.label2.TabIndex = 2;
 			this.label2.Text = "Servicios";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			// 
-			// NombreProveedor
-			// 
-			this.NombreProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-			this.NombreProveedor.DataPropertyName = "Nom_Proveedor";
-			this.NombreProveedor.HeaderText = "Proveedor";
-			this.NombreProveedor.Name = "NombreProveedor";
-			this.NombreProveedor.ReadOnly = true;
-			this.NombreProveedor.Width = 207;
-			// 
-			// Tipo
-			// 
-			this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-			this.Tipo.DataPropertyName = "Tipo";
-			this.Tipo.HeaderText = "Tipo";
-			this.Tipo.Name = "Tipo";
-			this.Tipo.ReadOnly = true;
-			this.Tipo.Visible = false;
-			this.Tipo.Width = 128;
-			// 
-			// Nombre
-			// 
-			this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Nombre.DataPropertyName = "Nom_Producto";
-			this.Nombre.HeaderText = "Nombre producto";
-			this.Nombre.Name = "Nombre";
-			this.Nombre.ReadOnly = true;
-			// 
-			// Precio
-			// 
-			this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-			this.Precio.DataPropertyName = "Precio";
-			this.Precio.HeaderText = "Precio";
-			this.Precio.Name = "Precio";
-			this.Precio.ReadOnly = true;
-			this.Precio.Width = 154;
-			// 
-			// IdProducto
-			// 
-			this.IdProducto.DataPropertyName = "Id_Producto";
-			this.IdProducto.HeaderText = "IdProducto";
-			this.IdProducto.Name = "IdProducto";
-			this.IdProducto.ReadOnly = true;
-			this.IdProducto.Visible = false;
-			// 
-			// IdProveedor
-			// 
-			this.IdProveedor.DataPropertyName = "Id_Proveedor";
-			this.IdProveedor.HeaderText = "IdProveedor";
-			this.IdProveedor.Name = "IdProveedor";
-			this.IdProveedor.ReadOnly = true;
-			this.IdProveedor.Visible = false;
 			// 
 			// ucServicios
 			// 
