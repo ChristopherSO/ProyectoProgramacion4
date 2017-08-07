@@ -14,6 +14,7 @@ namespace ProyectoProgramacion4.ListaDeCompras
 	public partial class ucListaDeCompras : UserControl
 	{
 		private frmMain formularioPadre;
+		private List<ProductoCompra> listaCompras;
 
 		public ucListaDeCompras()
 		{
@@ -31,7 +32,7 @@ namespace ProyectoProgramacion4.ListaDeCompras
 
 		private void cargarListaCompras()
 		{
-			var listaCompras = formularioPadre.productosPorCompra;
+			listaCompras = formularioPadre.productosPorCompra;
 
 			dgvCompras.DataSource = listaCompras.Select(x => new {
 				x.Producto.Proveedor.Nom_Proveedor,
@@ -43,6 +44,26 @@ namespace ProyectoProgramacion4.ListaDeCompras
 			}).ToList();
 
 			lblTotal.Text = "" + listaCompras.Sum(x => x.Producto.Precio);
+		}
+
+		private void btnSolicitar_Click(object sender, EventArgs e)
+		{
+			if (listaCompras.Count() > 0)
+			{
+				frmSolicitudDeCompra modal = new frmSolicitudDeCompra(
+					formularioPadre.usuarioLoggueado, 
+					formularioPadre.compra,
+					formularioPadre.productosPorCompra);
+				modal.ShowDialog();
+			}
+			else
+			{
+				MessageBox.Show(
+					"No se puede hacer una solicitud con una lista de compras vacía.",
+					"Aviso",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Information);
+			}
 		}
 	}
 }

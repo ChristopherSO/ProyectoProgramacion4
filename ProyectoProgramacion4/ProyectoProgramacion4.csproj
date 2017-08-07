@@ -69,6 +69,12 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaDeCompras\frmSolicitudDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaDeCompras\frmSolicitudDeCompra.Designer.cs">
+      <DependentUpon>frmSolicitudDeCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaDeCompras\ucListaDeCompras.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaDeCompras\frmSolicitudDeCompra.resx">
+      <DependentUpon>frmSolicitudDeCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaDeCompras\ucListaDeCompras.resx">
       <DependentUpon>ucListaDeCompras.cs</DependentUpon>
