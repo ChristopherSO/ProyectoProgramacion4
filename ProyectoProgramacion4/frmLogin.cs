@@ -24,34 +24,29 @@ namespace ProyectoProgramacion4
         {
             try
             {
-                bool existe;
-                string depar = "";
+                Usuario usuario;
+
                 using (ProyectoProgra4Entities context = new ProyectoProgra4Entities())
                 {
                     List<Usuario> usuarios = context.Usuario.ToList();
-                    List<Departamento> Department = context.Departamento.ToList();
-                    existe = usuarios.Any(u => u.Nom_Login == txtusario.Text && u.Contraseña == txtcontra.Text);
-                    var join = from Usuario in usuarios
-                               join Departamento in Department on
-                               Usuario.Id_Departamento equals Departamento.Id_Departamento
-                               select new { Departamento.Nom_Departamento };
-                              
 
-                    //existe = usuarios.Select(u => u.Id_Departamento));
-                    //existe = Department.Select(d => d.Nom_Departamento).Where(d => d)
-                    //existe = usuarios.Select(u=>u.Id_Departamento)
+                    usuario = usuarios.Where(u => u.Nom_Login == txtusario.Text && u.Contraseña == txtcontra.Text).FirstOrDefault();
 
-                }
-                if (existe)
-                {
-                    this.Hide();
-                    frmMain m = new frmMain(txtusario.Text,depar);
-                    m.Show();
+                    if (usuario != null)
+                    {
+                        MessageBox.Show("Inicio de sesión correcto");
+                        this.Hide();
+                        frmMain m = new frmMain(usuario);
+                        m.Show();
 
-                }
-                else {
-                    MessageBox.Show("Usuario y/o contraseña incorrecta");
-                }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario y/o contraseña incorrecta");
+                    }
+
+
+                }    
             }
             catch (Exception e)
             {
@@ -85,5 +80,5 @@ namespace ProyectoProgramacion4
 				Login();
 			}
 		}
-	}
+    }
 }

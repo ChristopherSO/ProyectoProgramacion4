@@ -16,18 +16,119 @@ namespace ProyectoProgramacion4
 {
 	public partial class frmMain : Form
 	{
-		public frmMain(string nombre, string departamento)
+        public Usuario usuarioLoggueado;
+        public Compra compra;
+        public List<ProductoCompra> productosPorCompra;
+        public int cantArticulos = 0;
+
+		public frmMain(Usuario usuario)
 		{
 			InitializeComponent();
-            using (ProyectoProgra4Entities context = new ProyectoProgra4Entities()) {
-                lblNombreUsuario.Text = "Bienvenido " + nombre;
-                lblDepartamento.Text = "Departamento de " + departamento;
-            }
+            usuarioLoggueado = usuario;
+            
+            lblNombreUsuario.Text = "Bienvenido " + usuarioLoggueado.Nombre;
+            lblDepartamento.Text = "Departamento de " + usuarioLoggueado.Departamento.Nom_Departamento;            
         }
 
-		public Compra compra;
-		public List<ProductoCompra> productosPorCompra;
-		public int cantArticulos = 0;
+        public void AutenticarUsuario()
+        {
+            frmMain FormularioPadre = (frmMain)this.FindForm();
+            TableLayoutPanel tlpMenu = (TableLayoutPanel)FormularioPadre.Controls.Find("tlpMenu", true)[0];
+      
+            if(usuarioLoggueado.Departamento.Nom_Departamento == "Credito")
+            {
+                tlpMenu.RowStyles[4].Height = 0;
+                tlpMenu.RowStyles[5].Height = 0;
+                tlpMenu.RowStyles[6].Height = 0;
+                tlpMenu.RowStyles[7].Height = 0;
+                tlpMenu.RowStyles[8].Height = 0;
+                tlpMenu.RowStyles[9].Height = 0;
+                tlpMenu.RowStyles[10].Height = 0;
+            }
+            else
+            {
+                if(usuarioLoggueado.Departamento.Nom_Departamento == "Cobros")
+                {
+                    tlpMenu.RowStyles[4].Height = 0;
+                    tlpMenu.RowStyles[5].Height = 0;
+                    tlpMenu.RowStyles[6].Height = 0;
+                    tlpMenu.RowStyles[7].Height = 0;
+                    tlpMenu.RowStyles[8].Height = 0;
+                    tlpMenu.RowStyles[9].Height = 0;
+                    tlpMenu.RowStyles[10].Height = 0;
+
+                }
+                else
+                {
+                    if(usuarioLoggueado.Departamento.Nom_Departamento == "Tesorería")
+                    {
+                        tlpMenu.RowStyles[0].Height = 0;
+                        tlpMenu.RowStyles[1].Height = 0;
+                        tlpMenu.RowStyles[2].Height = 0;
+                        tlpMenu.RowStyles[3].Height = 0;
+                        tlpMenu.RowStyles[9].Height = 0;
+                        tlpMenu.RowStyles[10].Height = 0;
+                        tlpMenu.RowStyles[11].Height = 0;
+
+                    }
+                    else
+                    {
+                        if(usuarioLoggueado.Departamento.Nom_Departamento == "Contabilidad")
+                        {
+                            tlpMenu.RowStyles[0].Height = 0;
+                            tlpMenu.RowStyles[1].Height = 0;
+                            tlpMenu.RowStyles[2].Height = 0;
+                            tlpMenu.RowStyles[3].Height = 0;
+
+                            tlpMenu.RowStyles[11].Height = 0;
+                        }
+                        else
+                        {
+                            if(usuarioLoggueado.Departamento.Nom_Departamento == "Tecnología")
+                            {
+                                tlpMenu.RowStyles[0].Height = 0;
+                                tlpMenu.RowStyles[1].Height = 0;
+                                tlpMenu.RowStyles[2].Height = 0;
+                                tlpMenu.RowStyles[3].Height = 0;
+                                tlpMenu.RowStyles[8].Height = 0;
+                                tlpMenu.RowStyles[9].Height = 0;
+                                tlpMenu.RowStyles[11].Height = 0;
+
+
+
+                            }
+                            else
+                            {
+                                if(usuarioLoggueado.Departamento.Nom_Departamento == "Captación")
+                                {
+                                    tlpMenu.RowStyles[4].Height = 0;
+                                    tlpMenu.RowStyles[5].Height = 0;
+                                    tlpMenu.RowStyles[6].Height = 0;
+                                    tlpMenu.RowStyles[7].Height = 0;
+                                    tlpMenu.RowStyles[8].Height = 0;
+                                    tlpMenu.RowStyles[9].Height = 0;
+                                    tlpMenu.RowStyles[10].Height = 0;
+
+                                }
+                                else
+                                {
+                                    if(usuarioLoggueado.Departamento.Nom_Departamento == "Gerencia")
+                                    {
+                                        tlpMenu.RowStyles[0].Height = 0;
+                                        tlpMenu.RowStyles[1].Height = 0;
+                                        tlpMenu.RowStyles[2].Height = 0;
+                                        tlpMenu.RowStyles[3].Height = 0;
+                                        tlpMenu.RowStyles[9].Height = 0;
+                                        tlpMenu.RowStyles[10].Height = 0;
+                                        tlpMenu.RowStyles[11].Height = 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
@@ -38,8 +139,9 @@ namespace ProyectoProgramacion4
 			// Cargar pantalla inicial
 			cambiarPantalla(new ucSolicitudes());
 			frmMain FormularioPadre = (frmMain)this.FindForm();
-			var ctrls = FormularioPadre.Controls.Find("tlpMenu", true);
-		}
+            TableLayoutPanel tlpMenu = (TableLayoutPanel)FormularioPadre.Controls.Find("tlpMenu", true)[0];
+            AutenticarUsuario();
+        }
 
 		private void crearCompra()
 		{
