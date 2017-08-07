@@ -131,20 +131,20 @@ INSERT [Proveedor] ([Id_Proveedor], [Nom_Proveedor], [Descripcion]) VALUES (5, N
 SET IDENTITY_INSERT [Proveedor] OFF
 
 SET IDENTITY_INSERT [Producto] ON 
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (1, 1, N'Impresiones', N'Gafetes', 9000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (2, 1, N'Articulo', N'PortaGafetes', 5000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (3, 1, N'Articulo', N'Valla Publicitaria', 20000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (4, 2, N'Vehiculo', N'Moto', 700000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (5, 2, N'Vehiculo', N'Carro', 120000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (6, 2, N'Vehiculo', N'Carro', 115000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (1, 1, N'Producto', N'Gafetes', 9000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (2, 1, N'Producto', N'PortaGafetes', 5000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (3, 1, N'Producto', N'Valla Publicitaria', 20000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (4, 2, N'Producto', N'Moto', 700000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (5, 2, N'Producto', N'Carro', 120000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (6, 2, N'Producto', N'Carro', 115000.0000)
 INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (7, 3, N'Servicio', N'Alfombras', 80000.0000)
 INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (8, 3, N'Servicio', N'Vidrios', 70000.0000)
 INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (9, 3, N'Servicio', N'Paredes', 76000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (10, 4, N'Articulo', N'Computadoras', 2200000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (11, 4, N'Suministros', N'Tintas', 860000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (12, 4, N'Articulo', N'Cable', 60000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (13, 5, N'Personal', N'Guardas de Seguridad', 130000.0000)
-INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (14, 5, N'Articulo', N'Camaras', 120000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (10, 4, N'Producto', N'Computadoras', 2200000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (11, 4, N'Producto', N'Tintas', 860000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (12, 4, N'Producto', N'Cable', 60000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (13, 5, N'Servicio', N'Guardas de Seguridad', 130000.0000)
+INSERT [Producto] ([Id_Producto], [Id_Proveedor], [Tipo], [Nom_Producto], [Precio]) VALUES (14, 5, N'Producto', N'Camaras', 120000.0000)
 SET IDENTITY_INSERT [Producto] OFF
 
 SET IDENTITY_INSERT [Compra] ON 
