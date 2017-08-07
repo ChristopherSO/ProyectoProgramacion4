@@ -38,38 +38,34 @@ namespace ProyectoProgramacion4
       
             if(usuarioLoggueado.Departamento.Nom_Departamento == "Credito")
             {
-                tlpMenu.RowStyles[4].Height = 0;
                 tlpMenu.RowStyles[5].Height = 0;
                 tlpMenu.RowStyles[6].Height = 0;
                 tlpMenu.RowStyles[7].Height = 0;
                 tlpMenu.RowStyles[8].Height = 0;
-                tlpMenu.RowStyles[9].Height = 0;
-                tlpMenu.RowStyles[10].Height = 0;
+                tlpMenu.RowStyles[11].Height = 0;
             }
             else
             {
                 if(usuarioLoggueado.Departamento.Nom_Departamento == "Cobros")
                 {
-                    tlpMenu.RowStyles[4].Height = 0;
                     tlpMenu.RowStyles[5].Height = 0;
                     tlpMenu.RowStyles[6].Height = 0;
                     tlpMenu.RowStyles[7].Height = 0;
                     tlpMenu.RowStyles[8].Height = 0;
-                    tlpMenu.RowStyles[9].Height = 0;
-                    tlpMenu.RowStyles[10].Height = 0;
+                    tlpMenu.RowStyles[11].Height = 0;
 
                 }
                 else
                 {
-                    if(usuarioLoggueado.Departamento.Nom_Departamento == "Tesorería")
+                    if(usuarioLoggueado.Departamento.Nom_Departamento == "Tesoreria")
                     {
                         tlpMenu.RowStyles[0].Height = 0;
                         tlpMenu.RowStyles[1].Height = 0;
                         tlpMenu.RowStyles[2].Height = 0;
                         tlpMenu.RowStyles[3].Height = 0;
-                        tlpMenu.RowStyles[9].Height = 0;
+                        tlpMenu.RowStyles[4].Height = 0;
                         tlpMenu.RowStyles[10].Height = 0;
-                        tlpMenu.RowStyles[11].Height = 0;
+
 
                     }
                     else
@@ -80,36 +76,27 @@ namespace ProyectoProgramacion4
                             tlpMenu.RowStyles[1].Height = 0;
                             tlpMenu.RowStyles[2].Height = 0;
                             tlpMenu.RowStyles[3].Height = 0;
-
-                            tlpMenu.RowStyles[11].Height = 0;
+                            tlpMenu.RowStyles[4].Height = 0;
                         }
                         else
                         {
                             if(usuarioLoggueado.Departamento.Nom_Departamento == "Tecnología")
                             {
-                                tlpMenu.RowStyles[0].Height = 0;
-                                tlpMenu.RowStyles[1].Height = 0;
-                                tlpMenu.RowStyles[2].Height = 0;
-                                tlpMenu.RowStyles[3].Height = 0;
-                                tlpMenu.RowStyles[8].Height = 0;
+                                
                                 tlpMenu.RowStyles[9].Height = 0;
+                                tlpMenu.RowStyles[10].Height = 0;
                                 tlpMenu.RowStyles[11].Height = 0;
-
-
-
+                                tlpMenu.RowStyles[12].Height = 0;
                             }
                             else
                             {
-                                if(usuarioLoggueado.Departamento.Nom_Departamento == "Captación")
+                                if(usuarioLoggueado.Departamento.Nom_Departamento == "Captacion")
                                 {
-                                    tlpMenu.RowStyles[4].Height = 0;
                                     tlpMenu.RowStyles[5].Height = 0;
                                     tlpMenu.RowStyles[6].Height = 0;
                                     tlpMenu.RowStyles[7].Height = 0;
                                     tlpMenu.RowStyles[8].Height = 0;
-                                    tlpMenu.RowStyles[9].Height = 0;
-                                    tlpMenu.RowStyles[10].Height = 0;
-
+                                    tlpMenu.RowStyles[11].Height = 0;
                                 }
                                 else
                                 {
@@ -119,9 +106,8 @@ namespace ProyectoProgramacion4
                                         tlpMenu.RowStyles[1].Height = 0;
                                         tlpMenu.RowStyles[2].Height = 0;
                                         tlpMenu.RowStyles[3].Height = 0;
-                                        tlpMenu.RowStyles[9].Height = 0;
-                                        tlpMenu.RowStyles[10].Height = 0;
-                                        tlpMenu.RowStyles[11].Height = 0;
+                                        tlpMenu.RowStyles[4].Height = 0;
+                                        tlpMenu.RowStyles[12].Height = 0;
                                     }
                                 }
                             }
