@@ -33,12 +33,13 @@
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dgvProveedores = new System.Windows.Forms.DataGridView();
-			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
 			this.btnVerServicios = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnVerProductos = new System.Windows.Forms.Button();
+			this.IdProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tableLayoutPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
 			this.flowLayoutPanel1.SuspendLayout();
@@ -101,6 +102,7 @@
 			this.dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProveedor,
             this.Nombre,
             this.Descripcion});
 			dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -120,21 +122,6 @@
 			this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvProveedores.Size = new System.Drawing.Size(1429, 752);
 			this.dgvProveedores.TabIndex = 3;
-			// 
-			// Nombre
-			// 
-			this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.Nombre.DataPropertyName = "Nom_Proveedor";
-			this.Nombre.HeaderText = "Nombre proveedor";
-			this.Nombre.Name = "Nombre";
-			this.Nombre.ReadOnly = true;
-			// 
-			// Descripcion
-			// 
-			this.Descripcion.DataPropertyName = "Descripcion";
-			this.Descripcion.HeaderText = "Descripción";
-			this.Descripcion.Name = "Descripcion";
-			this.Descripcion.ReadOnly = true;
 			// 
 			// flowLayoutPanel1
 			// 
@@ -189,6 +176,29 @@
 			this.btnVerProductos.UseVisualStyleBackColor = false;
 			this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click);
 			// 
+			// IdProveedor
+			// 
+			this.IdProveedor.DataPropertyName = "Id_Proveedor";
+			this.IdProveedor.HeaderText = "IdProveedor";
+			this.IdProveedor.Name = "IdProveedor";
+			this.IdProveedor.ReadOnly = true;
+			this.IdProveedor.Visible = false;
+			// 
+			// Nombre
+			// 
+			this.Nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.Nombre.DataPropertyName = "Nom_Proveedor";
+			this.Nombre.HeaderText = "Nombre proveedor";
+			this.Nombre.Name = "Nombre";
+			this.Nombre.ReadOnly = true;
+			// 
+			// Descripcion
+			// 
+			this.Descripcion.DataPropertyName = "Descripcion";
+			this.Descripcion.HeaderText = "Descripción";
+			this.Descripcion.Name = "Descripcion";
+			this.Descripcion.ReadOnly = true;
+			// 
 			// ucProveedores
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -215,10 +225,11 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DataGridView dgvProveedores;
 		private System.Windows.Forms.Button btnVerProductos;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
 		private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 		private System.Windows.Forms.Button btnVerServicios;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.DataGridViewTextBoxColumn IdProveedor;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+		private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
 	}
 }

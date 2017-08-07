@@ -86,15 +86,19 @@
 			// 
 			// lblDepartamento
 			// 
+			this.lblDepartamento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.lblDepartamento.AutoSize = true;
 			this.lblDepartamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblDepartamento.ForeColor = System.Drawing.SystemColors.ButtonFace;
 			this.lblDepartamento.Location = new System.Drawing.Point(888, 0);
 			this.lblDepartamento.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
 			this.lblDepartamento.Name = "lblDepartamento";
-			this.lblDepartamento.Size = new System.Drawing.Size(152, 55);
+			this.lblDepartamento.Size = new System.Drawing.Size(856, 146);
 			this.lblDepartamento.TabIndex = 3;
-			this.lblDepartamento.Text = "label3";
+			this.lblDepartamento.Text = "Departamento";
+			this.lblDepartamento.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label1
 			// 
@@ -116,7 +120,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Font = new System.Drawing.Font("Eras Demi ITC", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.White;
 			this.label2.Location = new System.Drawing.Point(80, 0);
 			this.label2.Margin = new System.Windows.Forms.Padding(0);
@@ -156,6 +160,7 @@
 			this.lblNombreUsuario.Name = "lblNombreUsuario";
 			this.lblNombreUsuario.Size = new System.Drawing.Size(588, 85);
 			this.lblNombreUsuario.TabIndex = 0;
+			this.lblNombreUsuario.Text = "Nombre usuario";
 			this.lblNombreUsuario.TextAlign = System.Drawing.ContentAlignment.BottomRight;
 			// 
 			// linkCerrarSesion
@@ -207,6 +212,8 @@
 			// 
 			// ucMenuLateral1
 			// 
+			this.ucMenuLateral1.BackColor = System.Drawing.Color.DimGray;
+			this.ucMenuLateral1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ucMenuLateral1.Location = new System.Drawing.Point(3, 3);
 			this.ucMenuLateral1.Name = "ucMenuLateral1";
 			this.ucMenuLateral1.Size = new System.Drawing.Size(341, 1180);

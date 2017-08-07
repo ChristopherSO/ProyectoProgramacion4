@@ -41,8 +41,15 @@ namespace ProyectoProgramacion4.Proveedores
 
 		private void btnVerProductos_Click(object sender, EventArgs e)
 		{
+			var filaSeleccionada = dgvProveedores.SelectedRows[0];
+
 			ucProductos pantalla = new ucProductos();
-			pantalla.NombreProveedor = dgvProveedores.SelectedRows[0].Cells["Nombre"].Value.ToString();
+			pantalla.proveedor = new Proveedor
+			{
+				Id_Proveedor = (int)filaSeleccionada.Cells["IdProveedor"].Value,
+				Nom_Proveedor = (string)filaSeleccionada.Cells["Nombre"].Value,
+				Descripcion = (string)filaSeleccionada.Cells["Descripcion"].Value,
+			};
 
 			frmMain FormularioPadre = (frmMain)this.FindForm();
 			FormularioPadre.cambiarPantalla(pantalla);
@@ -50,8 +57,15 @@ namespace ProyectoProgramacion4.Proveedores
 
 		private void btnVerServicios_Click(object sender, EventArgs e)
 		{
+			var filaSeleccionada = dgvProveedores.SelectedRows[0];
+
 			ucServicios pantalla = new ucServicios();
-			pantalla.NombreProveedor = dgvProveedores.SelectedRows[0].Cells["Nombre"].Value.ToString();
+			pantalla.proveedor = new Proveedor
+			{
+				Id_Proveedor = (int)filaSeleccionada.Cells["IdProveedor"].Value,
+				Nom_Proveedor = (string)filaSeleccionada.Cells["Nombre"].Value,
+				Descripcion = (string)filaSeleccionada.Cells["Descripcion"].Value,
+			};
 
 			frmMain FormularioPadre = (frmMain)this.FindForm();
 			FormularioPadre.cambiarPantalla(pantalla);

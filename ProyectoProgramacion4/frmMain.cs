@@ -25,12 +25,37 @@ namespace ProyectoProgramacion4
             }
         }
 
+		public Compra compra;
+		public List<ProductoCompra> productosPorCompra;
+		public int cantArticulos = 0;
+
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			//cambiarPantalla(new ucProveedores());
+			// Crear por defecto una compra y una lista donde se pueden agregar productos y servicios
+			compra = new Compra { Titulo = "Compra" };
+			productosPorCompra = new List<ProductoCompra>();
+
+			// Cargar pantalla inicial
 			cambiarPantalla(new ucSolicitudes());
 			frmMain FormularioPadre = (frmMain)this.FindForm();
 			var ctrls = FormularioPadre.Controls.Find("tlpMenu", true);
+		}
+
+		private void crearCompra()
+		{
+			//TODO: **** mover esto cuando se crea la solicitud ****
+			//try
+			//{
+			//	using (ProyectoProgra4Entities contexto = new ProyectoProgra4Entities())
+			//	{
+			//		contexto.Compra.Add(compra);
+			//		contexto.SaveChanges();
+			//	}
+			//}
+			//catch (Exception ex)
+			//{
+			//	MessageBox.Show(ex.ToString());
+			//}
 		}
 
 		public void cambiarPantalla(UserControl pantalla)
