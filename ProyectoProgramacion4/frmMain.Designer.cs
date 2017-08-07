@@ -53,12 +53,12 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(897, 394);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(897, 418);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel2
@@ -77,7 +77,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 1);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -140,7 +140,7 @@
             this.tableLayoutPanel3.Controls.Add(this.lblNombreUsuario, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.linkCerrarSesion, 0, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(671, 1);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
@@ -193,11 +193,11 @@
             this.tableLayoutPanel4.Controls.Add(this.pnlContenido, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.ucMenuLateral1, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(1, 64);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(1);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(895, 329);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(895, 353);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // pnlContenido
@@ -206,10 +206,10 @@
             this.pnlContenido.BackColor = System.Drawing.SystemColors.Control;
             this.pnlContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContenido.Location = new System.Drawing.Point(131, 1);
-            this.pnlContenido.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.pnlContenido.Margin = new System.Windows.Forms.Padding(1);
             this.pnlContenido.Name = "pnlContenido";
             this.pnlContenido.Padding = new System.Windows.Forms.Padding(19, 21, 19, 21);
-            this.pnlContenido.Size = new System.Drawing.Size(763, 327);
+            this.pnlContenido.Size = new System.Drawing.Size(763, 351);
             this.pnlContenido.TabIndex = 1;
             // 
             // ucMenuLateral1
@@ -217,18 +217,18 @@
             this.ucMenuLateral1.BackColor = System.Drawing.Color.DimGray;
             this.ucMenuLateral1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucMenuLateral1.Location = new System.Drawing.Point(0, 0);
-            this.ucMenuLateral1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.ucMenuLateral1.Margin = new System.Windows.Forms.Padding(0);
             this.ucMenuLateral1.Name = "ucMenuLateral1";
-            this.ucMenuLateral1.Size = new System.Drawing.Size(130, 329);
+            this.ucMenuLateral1.Size = new System.Drawing.Size(130, 353);
             this.ucMenuLateral1.TabIndex = 2;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 394);
+            this.ClientSize = new System.Drawing.Size(897, 418);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "frmMain";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);

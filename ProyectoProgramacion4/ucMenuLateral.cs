@@ -12,6 +12,7 @@ using ProyectoProgramacion4.Productos;
 using ProyectoProgramacion4.Servicios;
 using ProyectoProgramacion4.Solicitudes;
 using ProyectoProgramacion4.ListaDeCompras;
+using ProyectoProgramacion4.PantallaInicial;
 
 namespace ProyectoProgramacion4
 {
@@ -77,5 +78,10 @@ namespace ProyectoProgramacion4
 		{
 			CambiarPantalla(new ucListaDeCompras());
 		}
-	}
+
+        private void lnkPantallaPrincipal_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CambiarPantalla(new ucPantallaInicia());
+        }
+    }
 }
