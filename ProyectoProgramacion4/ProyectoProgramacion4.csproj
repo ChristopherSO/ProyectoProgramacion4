@@ -44,6 +44,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +74,12 @@
     </Compile>
     <Compile Include="ListaDeCompras\ucListaDeCompras.Designer.cs">
       <DependentUpon>ucListaDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaInicial\ucPantallaInicia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PantallaInicial\ucPantallaInicia.Designer.cs">
+      <DependentUpon>ucPantallaInicia.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\ucProductos.cs">
       <SubType>UserControl</SubType>
@@ -106,6 +114,11 @@
     <Compile Include="ucMenuLateral.Designer.cs">
       <DependentUpon>ucMenuLateral.cs</DependentUpon>
     </Compile>
+    <Compile Include="Web References\cr.fi.bccr.indicadoreseconomicos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListaDeCompras\ucListaDeCompras.resx">
       <DependentUpon>ucListaDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaInicial\ucPantallaInicia.resx">
+      <DependentUpon>ucPantallaInicia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\ucProductos.resx">
       <DependentUpon>ucProductos.cs</DependentUpon>
@@ -150,6 +166,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\cr.fi.bccr.indicadoreseconomicos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\cr.fi.bccr.indicadoreseconomicos\wsIndicadoresEconomicos.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -173,6 +194,25 @@
       <Project>{d73fddb2-9b3c-49c2-970a-9ee7eaf5cdbd}</Project>
       <Name>ModeloBD</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\cr.fi.bccr.indicadoreseconomicos\</RelPath>
+      <UpdateFromURL>http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>ProyectoProgramacion4_cr_fi_bccr_indicadoreseconomicos_wsIndicadoresEconomicos</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

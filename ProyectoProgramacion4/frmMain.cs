@@ -1,5 +1,6 @@
 ﻿using ProyectoProgramacion4.Proveedores;
 using ProyectoProgramacion4.Solicitudes;
+using ProyectoProgramacion4.PantallaInicial;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -137,8 +138,9 @@ namespace ProyectoProgramacion4
 			productosPorCompra = new List<ProductoCompra>();
 
 			// Cargar pantalla inicial
-			cambiarPantalla(new ucSolicitudes());
-			frmMain FormularioPadre = (frmMain)this.FindForm();
+			//cambiarPantalla(new ucSolicitudes());
+            cambiarPantalla(new ucPantallaInicia());
+            frmMain FormularioPadre = (frmMain)this.FindForm();
             TableLayoutPanel tlpMenu = (TableLayoutPanel)FormularioPadre.Controls.Find("tlpMenu", true)[0];
             AutenticarUsuario();
         }
